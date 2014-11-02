@@ -45,98 +45,40 @@ let s:bwc.gray03  = ['#262626', 235]
 let s:bwc.gray02  = ['#1c1c1c', 234] "
 let s:bwc.gray01  = ['#121212', 233]
 let s:bwc.gray00  = ['#080808', 232]
+let s:bwc.grayminus1  = ['#080808', 16]
+
+let s:bwc.nred     = ['#ff5f87', 1]  "1
+let s:bwc.bred     = ['#87005f', 9]  "9
+let s:bwc.ngreen   = ['#87d700', 2]  "2
+let s:bwc.bgreen   = ['#008700', 10] "10
+let s:bwc.nyellow  = ['#ffd757', 3]  "3
+let s:bwc.byellow  = ['#ff8700', 11] "11
+let s:bwc.nblue    = ['#5f87ff', 4]  "4
+let s:bwc.bblue    = ['#005fd7', 12] "12
+let s:bwc.nmagenta = ['#875fff', 5]  "5
+let s:bwc.bmagenta = ['#5f00af', 13] "13
+let s:bwc.ncyan    = ['#5fafff', 6]  "6
+let s:bwc.bcyan    = ['#0087d7', 14] "14
+
+let s:bwc.background       = ['#f2f2f2', 232]
+
 if &background == 'dark'
-
-    let s:bwc.vlcontrast = s:bwc.gray03
-    let s:bwc.lcontrast = s:bwc.gray06
-    let s:bwc.hcontrast = s:bwc.gray18
-    let s:bwc.vhcontrast = s:bwc.gray21
-    let s:bwc.acontrast = s:bwc.gray09
-
-    let s:bwc.nred     = ['#ff5f87', 204]
-    let s:bwc.bred     = ['#87005f', 89]
-    let s:bwc.ngreen   = ['#87d700', 112]
-    let s:bwc.bgreen   = ['#008700', 28]
-    let s:bwc.nyellow  = ['#ffd757', 221]
-    let s:bwc.byellow  = ['#ff8700', 208]
-    let s:bwc.nblue    = ['#5f87ff', 69]
-    let s:bwc.bblue    = ['#005fd7', 26]
-    let s:bwc.nmagenta = ['#875fff', 99]
-    let s:bwc.bmagenta = ['#5f00af', 55]
-    let s:bwc.ncyan    = ['#5fafff', 75]
-    let s:bwc.bcyan    = ['#0087d7', 32]
-
-    let s:bwc.background       = ['#1a1a1a', 232]
-
-    let s:bwc.nred     = ['#ff5f87', 1]  "1
-    let s:bwc.bred     = ['#87005f', 9]  "9
-    let s:bwc.ngreen   = ['#87d700', 2]  "2
-    let s:bwc.bgreen   = ['#008700', 10] "10
-    let s:bwc.nyellow  = ['#ffd757', 3]  "3
-    let s:bwc.byellow  = ['#ff8700', 11] "11
-    let s:bwc.nblue    = ['#5f87ff', 4]  "4
-    let s:bwc.bblue    = ['#005fd7', 12] "12
-    let s:bwc.nmagenta = ['#875fff', 5]  "5
-    let s:bwc.bmagenta = ['#5f00af', 13] "13
-    let s:bwc.ncyan    = ['#5fafff', 6]  "6
-    let s:bwc.bcyan    = ['#0087d7', 14] "14
- 
 
     let s:bwc.lcontrast  = ['#080808', 0]
     let s:bwc.vlcontrast  = ['#080808', 8]
     let s:bwc.hcontrast  = ['#080808', 15]
     let s:bwc.vhcontrast  = ['#080808', 7]
+
+    let s:bwc.lcontrast = s:bwc.gray11
 else
-    let s:bwc.vlcontrast = s:bwc.gray21
-    let s:bwc.lcontrast = s:bwc.gray18
-    let s:bwc.hcontrast = s:bwc.gray06
-    let s:bwc.vhcontrast = s:bwc.gray03
-    let s:bwc.acontrast = s:bwc.gray12
 
-    let s:bwc.byellow  = ['#ffd757', 221]
-    let s:bwc.nyellow  = ['#ff8700', 208]
-    let s:bwc.bgreen   = ['#87d700', 112]
-    let s:bwc.ngreen   = ['#008700', 28]
-    let s:bwc.bblue    = ['#5f87ff', 69]
-    let s:bwc.nblue    = ['#005fd7', 26]
-    let s:bwc.bred     = ['#ff5f87', 204]
-    let s:bwc.nred     = ['#87005f', 89]
-    let s:bwc.bmagenta = ['#875fff', 99]
-    let s:bwc.nmagenta = ['#5f00af', 55]
-    let s:bwc.bcyan    = ['#5fafff', 75]
-    let s:bwc.ncyan    = ['#0087d7', 32]
+    let s:bwc.lcontrast  = ['#080808', 7]
+    let s:bwc.vlcontrast  = ['#080808', 15]
+    let s:bwc.hcontrast  = ['#080808', 8]
+    let s:bwc.vhcontrast  = ['#080808', 0]
 
-    let s:bwc.background       = ['#f2f2f2', 232]
-let s:bwc.nred     = ['#ff5f87', 1]
-let s:bwc.bred     = ['#87005f', 9]
-let s:bwc.ngreen   = ['#87d700', 2]
-let s:bwc.bgreen   = ['#008700', 10]
-let s:bwc.nyellow  = ['#ffd757', 3]
-let s:bwc.byellow  = ['#ff8700', 11]
-let s:bwc.nblue    = ['#5f87ff', 4]
-let s:bwc.bblue    = ['#005fd7', 12]
-let s:bwc.nmagenta = ['#875fff', 5]
-let s:bwc.bmagenta = ['#5f00af', 13]
-let s:bwc.ncyan    = ['#5fafff', 6]
-let s:bwc.bcyan    = ['#0087d7', 14]
-
-let s:bwc.lcontrast  = ['#080808', 15]
-let s:bwc.vlcontrast  = ['#080808', 7]
-let s:bwc.hcontrast  = ['#080808', 0]
-let s:bwc.vhcontrast  = ['#080808', 8]
+    let s:bwc.lcontrast = s:bwc.gray11
 endif
-
-
-" let g:trafficlights_darkgutter = 0
-" Options {{{
-" if exists('g:trafficlights_darkgutter') && g:trafficlights_darkgutter
-"     let s:gutterbg = 'vlcontrast'
-"     let s:gutterfg = 'acontrast'
-" else
-"     let s:gutterbg = 'none'
-"     let s:gutterfg = 'lcontrast'
-" endif
-" }}}
 
 " Highlighting Function {{{
 function! s:HL(group, fg, ...)
@@ -201,7 +143,7 @@ endif
 call s:HL('VertSplit', 'gray14', 'gray14', 'none')
 
 call s:HL('Folded', 'lcontrast', 'none', 'none')
-call s:HL('CursorLine', 'none', 'vlcontrast', 'none')
+call s:HL('CursorLine', 'none', 'bgreen', 'none')
 call s:HL('CursorColumn', 'none', 'vlcontrast', 'none')
 call s:HL('ColorColumn', 'none', 'vlcontrast', 'none')
 call s:HL('Visual', 'lcontrast', 'vlcontrast', 'none')
@@ -215,8 +157,8 @@ call s:HL('TabLineSel', 'gray00', 'gray12', 'none')
 call s:HL('NonText', 'vlcontrast', 'none', 'none')
 call s:HL('SpecialKey', 'lcontrast', 'none', 'none')
 
-call s:HL('Search', 'lcontrast', 'vlcontrast', 'none')
-call s:HL('IncSearch', 'vhcontrast', 'lcontrast', 'none')
+call s:HL('Search', 'vhcontrast', 'vlcontrast', 'none')
+call s:HL('IncSearch', 'vlcontrast', 'vhcontrast', 'none')
 call s:HL('Underlined', 'none', 'none', 'underline')
 
 call s:HL('Directory', 'nblue', 'none', 'none')
@@ -268,7 +210,7 @@ call s:HL('iCursor', 'gray24', 'bred', 'none')
 " Syntax highlighting {{{
 call s:HL('Special', 'nyellow', 'none', 'none')
 
-call s:HL('MatchParen', 'vhcontrast', 'lcontrast', 'bold')
+call s:HL('MatchParen', 'vhcontrast', 'vlcontrast', 'bold')
 
 call s:HL('Comment', 'vlcontrast', 'none', 'none')
 call s:HL('Todo', 'gray12', 'none', 'none')
@@ -281,6 +223,7 @@ call s:HL('Operator', 'none', 'none', 'bold')
 call s:HL('Label', 'none', 'none', 'bold')
 call s:HL('Repeat', 'none', 'none', 'bold')
 
+call s:HL('Identifier', 'none', 'none', 'none')
 call s:HL('Identifier', 'none', 'none', 'none')
 call s:HL('Function', 'nred', 'none', 'none')
 
@@ -296,7 +239,7 @@ call s:HL('Boolean', 'lcontrast', 'none', 'none')
 call s:HL('Number', 'lcontrast', 'none', 'none')
 call s:HL('Float', 'lcontrast', 'none', 'none')
 
-call s:HL('String', 'ngreen', 'none', 'none')
+call s:HL('String', 'nmagenta', 'none', 'none')
 
 call s:HL('SpecialChar', 'nyellow', 'none', 'none')
 
@@ -457,7 +400,7 @@ call s:HL('htmlH5', 'none', 'none', 'none')
 call s:HL('htmlH6', 'none', 'none', 'none')
 call s:HL('htmlLink', 'none', 'none', 'none')
 call s:HL('htmlError', 'none', 'none', 'none')
-call s:HL('htmlString', 'nmagenta', 'none', 'none')
+" call s:HL('htmlString', 'nmagenta', 'none', 'none')
 call s:HL('javaScript', 'none', 'none', 'none')
 call s:HL('javaScriptMember', 'none', 'none', 'none')
 " }}} 
@@ -541,12 +484,12 @@ augroup END
 " }}}
 
 " Markdown {{{
-call s:HL('markdownHeadingRule', 'acontrast', 'none', 'none')
-call s:HL('markdownRule', 'acontrast', 'none', 'none')
-call s:HL('markdownHeadingDelimiter', 'acontrast', 'none', 'none')
-call s:HL('markdownOrderedListMarker', 'acontrast', 'none', 'none')
-call s:HL('markdownListMarker', 'acontrast', 'none', 'none')
-call s:HL('markdownBlockQuote', 'acontrast', 'none', 'none')
+call s:HL('markdownHeadingRule', 'none', 'none', 'bold')
+call s:HL('markdownRule', 'none', 'none', 'bold')
+call s:HL('markdownHeadingDelimiter', 'none', 'none', 'bold')
+call s:HL('markdownOrderedListMarker', 'none', 'none', 'bold')
+call s:HL('markdownListMarker', 'none', 'none', 'bold')
+call s:HL('markdownBlockQuote', 'none', 'none', 'bold')
 call s:HL('markdownItalic', 'nyellow', 'none', 'none')
 call s:HL('markdownBold', 'nyellow', 'none', 'none')
 call s:HL('markdownH1', 'none', 'none', 'bold')
@@ -576,7 +519,7 @@ call s:HL('pythonException', 'ngreen', 'none', 'none')
 call s:HL('pythonExceptions', 'ngreen', 'none', 'none')
 call s:HL('pythonPrecondit', 'ngreen', 'none', 'none')
 call s:HL('pythonInclude', 'none', 'none', 'bold')
-" call s:HL('pythonString', 'ngreen', 'none', 'none')
+" call s:HL('pythonString', 'nmagenta', 'none', 'none')
 call s:HL('pythonDecorator', 'ngreen', 'none', 'none')
 call s:HL('pythonRun', 'gray12', 'none', 'bold')
 " call s:HL('pythonRepeat', 'gray18', 'none', 'bold')
@@ -596,7 +539,7 @@ call s:HL('rubyRegexpAnchor', 'ngreen', 'none', 'none')
 call s:HL('rubyRegexpQuantifier', 'ngreen', 'none', 'none')
 call s:HL('rubyRegexpDelimiter', 'ngreen', 'none', 'none')
 call s:HL('rubyStringDelimiter', 'ngreen', 'none', 'none')
-call s:HL('rubyString', 'ngreen', 'none', 'none')
+" call s:HL('rubyString', 'ngreen', 'none', 'none')
 call s:HL('rubySymbol', 'none', 'none', 'none')
 call s:HL('rubyTodo', 'lcontrast', 'vlcontrast', 'bold')
 call s:HL('rubyPseudoVariable', 'lcontrast', 'none', 'none')
