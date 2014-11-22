@@ -69,7 +69,7 @@ if &background == 'dark'
     let s:bwc.hcontrast  = ['#080808', 15]
     let s:bwc.vhcontrast  = ['#080808', 7]
 
-    let s:bwc.lcontrast = s:bwc.gray11
+    " let s:bwc.lcontrast = s:bwc.gray07
 else
 
     let s:bwc.lcontrast  = ['#080808', 7]
@@ -77,7 +77,7 @@ else
     let s:bwc.hcontrast  = ['#080808', 8]
     let s:bwc.vhcontrast  = ['#080808', 0]
 
-    let s:bwc.lcontrast = s:bwc.gray11
+    " let s:bwc.lcontrast = s:bwc.gray11
 endif
 
 " Highlighting Function {{{
@@ -142,23 +142,23 @@ endif
 
 call s:HL('VertSplit', 'gray14', 'gray14', 'none')
 
-call s:HL('Folded', 'lcontrast', 'none', 'none')
-call s:HL('CursorLine', 'none', 'bgreen', 'none')
-call s:HL('CursorColumn', 'none', 'vlcontrast', 'none')
-call s:HL('ColorColumn', 'none', 'vlcontrast', 'none')
-call s:HL('Visual', 'lcontrast', 'vlcontrast', 'none')
-call s:HL('VisualNOS', 'lcontrast', 'vlcontrast', 'none')
+call s:HL('Folded', 'hcontrast', 'none', 'none')
+call s:HL('CursorLine', 'none', 'vlcontrast', 'none')
+call s:HL('CursorColumn', 'none', 'lcontrast', 'none')
+call s:HL('ColorColumn', 'none', 'lcontrast', 'none')
+call s:HL('Visual', 'hcontrast', 'lcontrast', 'none')
+call s:HL('VisualNOS', 'hcontrast', 'lcontrast', 'none')
 
 " GUI
 call s:HL('TabLine', 'gray00', 'gray06', 'none')
 call s:HL('TabLineFill', 'gray18', 'none', 'none')
 call s:HL('TabLineSel', 'gray00', 'gray12', 'none')
 
-call s:HL('NonText', 'vlcontrast', 'none', 'none')
-call s:HL('SpecialKey', 'lcontrast', 'none', 'none')
+call s:HL('NonText', 'lcontrast', 'none', 'none')
+call s:HL('SpecialKey', 'hcontrast', 'none', 'none')
 
-call s:HL('Search', 'vhcontrast', 'vlcontrast', 'none')
-call s:HL('IncSearch', 'vlcontrast', 'vhcontrast', 'none')
+call s:HL('Search', 'vhcontrast', 'lcontrast', 'none')
+call s:HL('IncSearch', 'lcontrast', 'vhcontrast', 'none')
 call s:HL('Underlined', 'none', 'none', 'underline')
 
 call s:HL('Directory', 'nblue', 'none', 'none')
@@ -170,7 +170,7 @@ call s:HL('MoreMsg', 'nyellow', 'none', 'none')
 call s:HL('ModeMsg', 'ngreen', 'none', 'none')
 call s:HL('Question', 'nblue', 'none', 'none')
 call s:HL('WarningMsg', 'nmagenta', 'none', 'none')
-call s:HL('Delimiter', 'lcontrast', 'none', 'none')
+call s:HL('Delimiter', 'hcontrast', 'none', 'none')
 
 call s:HL('Tag', 'none', 'none', 'bold')
 
@@ -178,7 +178,7 @@ call s:HL('WildMenu', 'gray24', 'gray06', 'none')
 
 call s:HL('StatusLine', 'gray02', 'gray17', 'none')
 call s:HL('StatusLineNC', 'gray02', 'gray14', 'none')
-call s:HL('User1', 'vlcontrast', 'ngreen', 'none')
+call s:HL('User1', 'lcontrast', 'ngreen', 'none')
 call s:HL('User2', 'gray06', 'gray18', 'none')
 call s:HL('User3', 'gray24', 'gray03', 'none' )
 call s:HL('User4', 'gray00', 'gray18', 'bold')
@@ -190,9 +190,9 @@ call s:HL('User9', 'none', 'none', 'none')
 call s:HL('User0', 'none', 'none', 'none')
 
 " Gutter {{{
-call s:HL('CursorLineNr', 'lcontrast', 'none', 'none')
-call s:HL('LineNr', 'vlcontrast', 'none', 'none')
-call s:HL('FoldColumn', 'lcontrast', 'none', 'none')
+call s:HL('CursorLineNr', 'hcontrast', 'none', 'none')
+call s:HL('LineNr', 'lcontrast', 'none', 'none')
+call s:HL('FoldColumn', 'hcontrast', 'none', 'none')
 call s:HL('SignColumn', 'none', 'none', 'none')
 " }}}
 
@@ -210,9 +210,9 @@ call s:HL('iCursor', 'gray24', 'bred', 'none')
 " Syntax highlighting {{{
 call s:HL('Special', 'nyellow', 'none', 'none')
 
-call s:HL('MatchParen', 'vhcontrast', 'vlcontrast', 'bold')
+call s:HL('MatchParen', 'vhcontrast', 'lcontrast', 'bold')
 
-call s:HL('Comment', 'vlcontrast', 'none', 'none')
+call s:HL('Comment', 'lcontrast', 'none', 'none')
 call s:HL('Todo', 'gray12', 'none', 'none')
 call s:HL('SpecialComment', 'gray12', 'none', 'bold')
 
@@ -227,26 +227,26 @@ call s:HL('Identifier', 'none', 'none', 'none')
 call s:HL('Identifier', 'none', 'none', 'none')
 call s:HL('Function', 'nred', 'none', 'none')
 
-call s:HL('PreProc', 'lcontrast', 'none', 'none')
-call s:HL('Macro', 'lcontrast', 'none', 'none')
-call s:HL('Define', 'lcontrast', 'none', 'none')
-call s:HL('PreCondit', 'lcontrast', 'none', 'none')
+call s:HL('PreProc', 'hcontrast', 'none', 'none')
+call s:HL('Macro', 'hcontrast', 'none', 'none')
+call s:HL('Define', 'hcontrast', 'none', 'none')
+call s:HL('PreCondit', 'hcontrast', 'none', 'none')
 
-call s:HL('Constant', 'lcontrast', 'none', 'none')
-call s:HL('Character', 'lcontrast', 'none', 'none')
-call s:HL('Boolean', 'lcontrast', 'none', 'none')
+call s:HL('Constant', 'hcontrast', 'none', 'none')
+call s:HL('Character', 'hcontrast', 'none', 'none')
+call s:HL('Boolean', 'hcontrast', 'none', 'none')
 
-call s:HL('Number', 'lcontrast', 'none', 'none')
-call s:HL('Float', 'lcontrast', 'none', 'none')
+call s:HL('Number', 'hcontrast', 'none', 'none')
+call s:HL('Float', 'hcontrast', 'none', 'none')
 
-call s:HL('String', 'nmagenta', 'none', 'none')
+call s:HL('String', 'ngreen', 'none', 'none')
 
 call s:HL('SpecialChar', 'nyellow', 'none', 'none')
 
-call s:HL('Type', 'lcontrast', 'none', 'none')
-call s:HL('Typedef', 'lcontrast', 'none', 'none')
-call s:HL('StorageClass', 'lcontrast', 'none', 'none')
-call s:HL('Structure', 'lcontrast', 'none', 'none')
+call s:HL('Type', 'hcontrast', 'none', 'none')
+call s:HL('Typedef', 'hcontrast', 'none', 'none')
+call s:HL('StorageClass', 'hcontrast', 'none', 'none')
+call s:HL('Structure', 'hcontrast', 'none', 'none')
 
 call s:HL('Exception', 'ngreen', 'none', 'bold')
 
@@ -365,7 +365,7 @@ call s:HL('cssImportant', 'none', 'none', 'none')
 " javascript {{{
 call s:HL('javaScriptIdentifier', 'none', 'none', 'bold')
 call s:HL('javaScriptBoolean', 'ncyan', 'none', 'none')
-call s:HL('javaScriptNumber', 'ncyan', 'none', 'none')
+call s:HL('javaScriptNumber', 'hcontrast', 'none', 'none')
 call s:HL('javaScriptFunction', 'none', 'none', 'bold')
 call s:HL('javaScriptBraces', 'none', 'none', 'none')
 call s:HL('javaScriptMember', 'ngreen', 'none', 'none')
@@ -406,17 +406,17 @@ call s:HL('javaScriptMember', 'none', 'none', 'none')
 " }}} 
 
 " Java {{{
-call s:HL('javaClassDecl', 'lcontrast', 'none', 'none')
+call s:HL('javaClassDecl', 'hcontrast', 'none', 'none')
 call s:HL('javaScopeDecl', 'none', 'none', 'bold')
-call s:HL('javaCommentTitle', 'vlcontrast', 'none', 'none')
-call s:HL('javaDocTags', 'lcontrast', 'none', 'none')
+call s:HL('javaCommentTitle', 'lcontrast', 'none', 'none')
+call s:HL('javaDocTags', 'hcontrast', 'none', 'none')
 call s:HL('javaDocParam', 'none', 'none', 'none')
 call s:HL('javaStorageClass', 'nred', 'none', 'none')
-call s:HL('javaAnnotation', 'lcontrast', 'none', 'none')
-call s:HL('javaTypedef', 'lcontrast', 'none', 'none')
-call s:HL('javaType', 'lcontrast', 'none', 'none')
+call s:HL('javaAnnotation', 'hcontrast', 'none', 'none')
+call s:HL('javaTypedef', 'hcontrast', 'none', 'none')
+call s:HL('javaType', 'hcontrast', 'none', 'none')
 call s:HL('javaBraces', 'none', 'none', 'none')
-call s:HL('javaExternal', 'lcontrast', 'none', 'none')
+call s:HL('javaExternal', 'hcontrast', 'none', 'none')
 call s:HL('javaSpecialChar', 'ngreen', 'none', 'none')
 " }}}
 
@@ -429,11 +429,11 @@ call s:HL('VimMapMod', 'none', 'none', 'none')
 call s:HL('VimNotation', 'none', 'none', 'none')
 call s:HL('VimBracket', 'none', 'none', 'none')
 call s:HL('VimParenSep', 'none', 'none', 'none')
-call s:HL('VimOption', 'lcontrast', 'none', 'none')
-call s:HL('VimFunction', 'lcontrast', 'none', 'none')
-call s:HL('VimFuncName', 'lcontrast', 'none', 'none')
+call s:HL('VimOption', 'hcontrast', 'none', 'none')
+call s:HL('VimFunction', 'hcontrast', 'none', 'none')
+call s:HL('VimFuncName', 'hcontrast', 'none', 'none')
 call s:HL('VimFuncSID', 'none', 'none', 'none')
-call s:HL('vimLineComment', 'vlcontrast', 'none', 'none')
+call s:HL('vimLineComment', 'lcontrast', 'none', 'none')
 " }}}
 
 " sh {{{
@@ -447,12 +447,12 @@ call s:HL('shDeref', 'none', 'none', 'none')
 " }}}
 
 " zsh {{{
-call s:HL('zshDeref', 'lcontrast', 'none', 'none')
+call s:HL('zshDeref', 'hcontrast', 'none', 'none')
 call s:HL('zshQuoted', 'ngreen', 'none', 'none')
-" call s:HL('zshCommands', 'lcontrast', 'none', 'none')
-call s:HL('zshPrecommand', 'lcontrast', 'none', 'none')
+" call s:HL('zshCommands', 'hcontrast', 'none', 'none')
+call s:HL('zshPrecommand', 'hcontrast', 'none', 'none')
 call s:HL('zshTypes', 'none', 'none', 'none')
-call s:HL('zshSubst', 'lcontrast', 'none', 'none')
+call s:HL('zshSubst', 'hcontrast', 'none', 'none')
 " }}}
 
 " LaTeX {{{
@@ -474,7 +474,7 @@ call s:HL('texSection', 'nred', 'none', 'none')
 call s:HL('texComment', 'gray12', 'none', 'none')
 call s:HL('plaintexControlSequence', 'gray12', 'none', 'none')
 call s:HL('texDelimiter', 'nblue', 'none', 'none')
-call s:HL('texMathZoneX', 'lcontrast', 'none', 'none')
+call s:HL('texMathZoneX', 'hcontrast', 'none', 'none')
 call s:HL('texSpecialChar', 'ngreen', 'none', 'none')
 augroup trafficlights_tex
     au!
@@ -510,10 +510,10 @@ call s:HL('markdownCodeBlock', 'nmagenta', 'none', 'none')
 " }}}
 
 " Python {{{
-call s:HL('pythonBuiltin', 'lcontrast')
+call s:HL('pythonBuiltin', 'hcontrast')
 call s:HL('pythonBuiltinObj', 'nblue')
 call s:HL('pythonBuiltinFunc', 'nblue')
-call s:HL('pythonFunction', 'lcontrast')
+call s:HL('pythonFunction', 'hcontrast')
 call s:HL('pythonEscape', 'nblue')
 call s:HL('pythonException', 'ngreen', 'none', 'none')
 call s:HL('pythonExceptions', 'ngreen', 'none', 'none')
@@ -527,7 +527,7 @@ call s:HL('pythonCoding', 'gray12', 'none', 'bold')
 " }}}
 
 " Ruby {{{
-call s:HL('rubyComment', 'vlcontrast', 'none', 'none')
+call s:HL('rubyComment', 'lcontrast', 'none', 'none')
 call s:HL('rubyBlock', 'none', 'none', 'bold')
 call s:HL('rubyClass', 'none', 'none', 'bold')
 call s:HL('rubyModule', 'none', 'none', 'bold')
@@ -541,13 +541,13 @@ call s:HL('rubyRegexpDelimiter', 'ngreen', 'none', 'none')
 call s:HL('rubyStringDelimiter', 'ngreen', 'none', 'none')
 " call s:HL('rubyString', 'ngreen', 'none', 'none')
 call s:HL('rubySymbol', 'none', 'none', 'none')
-call s:HL('rubyTodo', 'lcontrast', 'vlcontrast', 'bold')
-call s:HL('rubyPseudoVariable', 'lcontrast', 'none', 'none')
+call s:HL('rubyTodo', 'hcontrast', 'lcontrast', 'bold')
+call s:HL('rubyPseudoVariable', 'hcontrast', 'none', 'none')
 call s:HL('rubyBlockParameter', 'none', 'none', 'none')
 call s:HL('rubyInstanceVariable', 'none', 'none', 'none')
-call s:HL('rubyModuleDeclaration', 'lcontrast', 'none', 'none')
-call s:HL('rubyFunction', 'lcontrast', 'none', 'none')
-call s:HL('rubyConstant', 'lcontrast', 'none', 'none')
+call s:HL('rubyModuleDeclaration', 'hcontrast', 'none', 'none')
+call s:HL('rubyFunction', 'hcontrast', 'none', 'none')
+call s:HL('rubyConstant', 'hcontrast', 'none', 'none')
 call s:HL('rubyAccess', 'none', 'none', 'bold')
 call s:HL('rubyAttribute', 'none', 'none', 'bold')
 " }}}
