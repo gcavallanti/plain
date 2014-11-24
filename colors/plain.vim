@@ -239,7 +239,11 @@ call s:HL('Boolean', 'hcontrast', 'none', 'none')
 call s:HL('Number', 'hcontrast', 'none', 'none')
 call s:HL('Float', 'hcontrast', 'none', 'none')
 
-call s:HL('String', 'ngreen', 'none', 'none')
+if &background == 'dark'
+  call s:HL('String', 'ngreen', 'none', 'none')
+else
+  call s:HL('String', 'nmagenta', 'none', 'none')
+endif
 
 call s:HL('SpecialChar', 'nyellow', 'none', 'none')
 
@@ -248,7 +252,7 @@ call s:HL('Typedef', 'hcontrast', 'none', 'none')
 call s:HL('StorageClass', 'hcontrast', 'none', 'none')
 call s:HL('Structure', 'hcontrast', 'none', 'none')
 
-call s:HL('Exception', 'ngreen', 'none', 'bold')
+call s:HL('Exception', 'nred', 'none', 'bold')
 
 call s:HL('Error', 'gray24', 'bred', 'bold')
 call s:HL('Debug', 'gray24', 'none', 'bold')
@@ -534,11 +538,11 @@ call s:HL('rubyModule', 'none', 'none', 'bold')
 call s:HL('rubyInclude', 'none', 'none', 'none')
 call s:HL('rubyDefine', 'none', 'none', 'bold')
 call s:HL('rubyRegexp', 'ngreen', 'none', 'none')
-call s:HL('rubyRegexpCharClass', 'ngreen', 'none', 'none')
-call s:HL('rubyRegexpAnchor', 'ngreen', 'none', 'none')
-call s:HL('rubyRegexpQuantifier', 'ngreen', 'none', 'none')
-call s:HL('rubyRegexpDelimiter', 'ngreen', 'none', 'none')
-call s:HL('rubyStringDelimiter', 'ngreen', 'none', 'none')
+" call s:HL('rubyRegexpCharClass', 'ngreen', 'none', 'none')
+" call s:HL('rubyRegexpAnchor', 'ngreen', 'none', 'none')
+" call s:HL('rubyRegexpQuantifier', 'ngreen', 'none', 'none')
+" call s:HL('rubyRegexpDelimiter', 'ngreen', 'none', 'none')
+" call s:HL('rubyStringDelimiter', 'ngreen', 'none', 'none')
 " call s:HL('rubyString', 'ngreen', 'none', 'none')
 call s:HL('rubySymbol', 'none', 'none', 'none')
 call s:HL('rubyTodo', 'hcontrast', 'lcontrast', 'bold')
@@ -573,7 +577,7 @@ call s:HL('djangoVarBlock', 'byellow', 'none', 'none')
 " }}}
 
 " LessCSS {{{
-call s:HL('lessVariable', 'ngreen', 'none', 'none')
+" call s:HL('lessVariable', 'ngreen', 'none', 'none')
 " }}}
 
 " }}}
