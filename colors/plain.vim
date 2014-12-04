@@ -150,9 +150,9 @@ call s:HL('Visual', 'hcontrast', 'lcontrast', 'none')
 call s:HL('VisualNOS', 'hcontrast', 'lcontrast', 'none')
 
 " GUI
-call s:HL('TabLine', 'gray00', 'gray06', 'none')
+call s:HL('TabLine', 'none', 'gray06', 'none')
 call s:HL('TabLineFill', 'gray18', 'none', 'none')
-call s:HL('TabLineSel', 'gray00', 'gray12', 'none')
+call s:HL('TabLineSel', 'vhcontrast', 'gray12', 'none')
 
 call s:HL('NonText', 'lcontrast', 'none', 'none')
 call s:HL('SpecialKey', 'hcontrast', 'none', 'none')
@@ -208,13 +208,13 @@ call s:HL('iCursor', 'gray24', 'bred', 'none')
 " }}}
 
 " Syntax highlighting {{{
-call s:HL('Special', 'nyellow', 'none', 'none')
+call s:HL('Special', 'nred', 'none', 'none')
 
 call s:HL('MatchParen', 'vhcontrast', 'lcontrast', 'bold')
 
 call s:HL('Comment', 'lcontrast', 'none', 'none')
 call s:HL('Todo', 'gray12', 'none', 'none')
-call s:HL('SpecialComment', 'gray12', 'none', 'bold')
+call s:HL('SpecialComment', 'nred', 'none', 'bold')
 
 call s:HL('Statement', 'none', 'none', 'bold')
 call s:HL('Keyword', 'none', 'none', 'bold')
@@ -240,12 +240,12 @@ call s:HL('Number', 'hcontrast', 'none', 'none')
 call s:HL('Float', 'hcontrast', 'none', 'none')
 
 if &background == 'dark'
-  call s:HL('String', 'ngreen', 'none', 'none')
+  call s:HL('String', 'gray12', 'vlcontrast', 'none')
 else
-  call s:HL('String', 'nmagenta', 'none', 'none')
+  call s:HL('String', 'hcontrast', 'vlcontrast', 'none')
 endif
 
-call s:HL('SpecialChar', 'nyellow', 'none', 'none')
+call s:HL('SpecialChar', 'nred', 'none', 'none')
 
 call s:HL('Type', 'hcontrast', 'none', 'none')
 call s:HL('Typedef', 'hcontrast', 'none', 'none')
@@ -260,8 +260,8 @@ call s:HL('Ignore', 'gray12', 'none', 'none')
 " }}}
 
 " Help {{{
-call s:HL('helpHyperTextEntry', 'nred', 'none', 'none')
-call s:HL('helpSectionDelim', 'nred', 'none', 'none')
+call s:HL('helpHyperTextEntry', 'ncyan', 'none', 'none')
+call s:HL('helpSectionDelim', 'ncyan', 'none', 'none')
 call s:HL('helpSpecial', 'nblue', 'none', 'none')
 call s:HL('helpExample', 'nmagenta', 'none', 'none')
 " }}}
@@ -288,9 +288,9 @@ endif
 " }}}
 
 " quickfix {{{
-call s:HL('qfFilename', 'nmagenta', 'none', 'none')
+call s:HL('qfFilename', 'none', 'none', 'bold')
 call s:HL('qfSeparator', 'none', 'none', 'none')
-call s:HL('qfLineNr', 'nyellow', 'none', 'none')
+call s:HL('qfLineNr', 'none', 'none', 'none')
 " }}}
 
 " }}}
@@ -339,23 +339,23 @@ call s:HL('cssVendor', 'none', 'none', 'none')
 call s:HL('cssProp', 'none', 'none', 'none')
 call s:HL('cssFontAttr', 'none', 'none', 'none')
 call s:HL('cssAttrComma', 'none', 'none', 'none')
-call s:HL('cssAttr', 'ncyan', 'none', 'none')
+call s:HL('cssAttr', 'hcontrast', 'none', 'none')
 call s:HL('cssAttributeSelector', 'none', 'none', 'none')
 call s:HL('cssInclude', 'none', 'none', 'none')
 call s:HL('cssIncludeKeyword', 'none', 'none', 'none')
-call s:HL('cssUnitDecorators', 'ncyan', 'none', 'none')
-call s:HL('cssColor', 'ncyan', 'none', 'none')
+call s:HL('cssUnitDecorators', 'hcontrast', 'none', 'none')
+call s:HL('cssColor', 'hcontrast', 'none', 'none')
 call s:HL('cssBraces', 'none', 'none', 'none')
 call s:HL('cssSelectorOp', 'none', 'none', 'none')
 call s:HL('cssSelectorOp2', 'none', 'none', 'none')
-call s:HL('cssIdentifier', 'nred', 'none', 'none')
-call s:HL('cssClassName', 'nmagenta', 'none', 'none')
-call s:HL('cssClassNameDot', 'nmagenta', 'none', 'none')
+call s:HL('cssIdentifier', 'hcontrast', 'none', 'none')
+call s:HL('cssClassName', 'gray12', 'none', 'none')
+call s:HL('cssClassNameDot', 'gray12', 'none', 'none')
 call s:HL('cssFunctionName', 'none', 'none', 'none')
 call s:HL('cssFunctionComma', 'none', 'none', 'none')
-call s:HL('cssTagName', 'nblue', 'none', 'none')
+call s:HL('cssTagName', 'none', 'none', 'bold')
 call s:HL('cssPseudoClassId', 'none', 'none', 'none')
-call s:HL('cssPseudoClassFn', 'nblue', 'none', 'none')
+call s:HL('cssPseudoClassFn', 'none', 'none', 'none')
 call s:HL('cssImportant', 'none', 'none', 'none')
 " }}}
 
@@ -368,7 +368,7 @@ call s:HL('cssImportant', 'none', 'none', 'none')
 
 " javascript {{{
 call s:HL('javaScriptIdentifier', 'none', 'none', 'bold')
-call s:HL('javaScriptBoolean', 'ncyan', 'none', 'none')
+call s:HL('javaScriptBoolean', 'hcontrast', 'none', 'none')
 call s:HL('javaScriptNumber', 'hcontrast', 'none', 'none')
 call s:HL('javaScriptFunction', 'none', 'none', 'bold')
 call s:HL('javaScriptBraces', 'none', 'none', 'none')
@@ -385,14 +385,28 @@ call s:HL('diffLine', 'nyellow', 'none', 'none')
 call s:HL('diffSubname', 'byellow', 'none', 'none')
 " }}}
 
+" fugitive {{{
+call s:HL('gitcommitDiscardedFile', 'nred', 'none',)
+call s:HL('gitcommitSelectedFile', 'ngreen', 'none',)
+call s:HL('gitcommitUntrackedFile', 'nyellow', 'none',)
+call s:HL('gitcommitBranch', 'none', 'none',)
+
+" }}}
+
+" XML {{{
+call s:HL('xmlTag', 'none', 'none', 'none')
+call s:HL('xmlEndTag', 'none', 'none', 'none')
+call s:HL('xmlTagName', 'none', 'none', 'none')
+" }}}
+
 " HTML {{{
 call s:HL('htmlTag', 'none', 'none', 'none')
 call s:HL('htmlEndTag', 'none', 'none', 'none')
-call s:HL('htmlTagName', 'nblue', 'none', 'none')
+call s:HL('htmlTagName', 'none', 'none', 'bold')
 call s:HL('htmlTagN', 'none', 'none', 'none')
 call s:HL('htmlItalic', 'none', 'none', 'none')
 call s:HL('htmlBold', 'none', 'none', 'none')
-call s:HL('htmlSpecialTagName', 'nblue', 'none', 'none')
+call s:HL('htmlSpecialTagName', 'none', 'none', 'bold')
 call s:HL('htmlSpecialChar', 'nred', 'none', 'none')
 call s:HL('htmlArg', 'none', 'none', 'none')
 call s:HL('htmlTitle', 'none', 'none', 'none')
@@ -404,7 +418,7 @@ call s:HL('htmlH5', 'none', 'none', 'none')
 call s:HL('htmlH6', 'none', 'none', 'none')
 call s:HL('htmlLink', 'none', 'none', 'none')
 call s:HL('htmlError', 'none', 'none', 'none')
-" call s:HL('htmlString', 'nmagenta', 'none', 'none')
+" call s:HL('htmlString', 'hcontrast', 'none', 'none')
 call s:HL('javaScript', 'none', 'none', 'none')
 call s:HL('javaScriptMember', 'none', 'none', 'none')
 " }}} 
@@ -415,7 +429,7 @@ call s:HL('javaScopeDecl', 'none', 'none', 'bold')
 call s:HL('javaCommentTitle', 'lcontrast', 'none', 'none')
 call s:HL('javaDocTags', 'hcontrast', 'none', 'none')
 call s:HL('javaDocParam', 'none', 'none', 'none')
-call s:HL('javaStorageClass', 'nred', 'none', 'none')
+call s:HL('javaStorageClass', 'hcontrast', 'none', 'none')
 call s:HL('javaAnnotation', 'hcontrast', 'none', 'none')
 call s:HL('javaTypedef', 'hcontrast', 'none', 'none')
 call s:HL('javaType', 'hcontrast', 'none', 'none')
@@ -452,7 +466,7 @@ call s:HL('shDeref', 'none', 'none', 'none')
 
 " zsh {{{
 call s:HL('zshDeref', 'hcontrast', 'none', 'none')
-call s:HL('zshQuoted', 'ngreen', 'none', 'none')
+call s:HL('zshQuoted', 'hcontrast', 'none', 'none')
 " call s:HL('zshCommands', 'hcontrast', 'none', 'none')
 call s:HL('zshPrecommand', 'hcontrast', 'none', 'none')
 call s:HL('zshTypes', 'none', 'none', 'none')
@@ -462,6 +476,7 @@ call s:HL('zshSubst', 'hcontrast', 'none', 'none')
 " LaTeX {{{
 call s:HL('texStatement', 'none', 'none', 'bold')
 call s:HL('texZone', 'none', 'none', 'none')
+call s:HL('texBeginEndName', 'none', 'none', 'none')
 call s:HL('texMathZoneX', 'byellow', 'none', 'none')
 call s:HL('texMathZoneA', 'byellow', 'none', 'none')
 call s:HL('texMathZoneB', 'byellow', 'none', 'none')
@@ -474,17 +489,21 @@ call s:HL('texMath', 'byellow', 'none', 'none')
 call s:HL('texMathMatcher', 'byellow', 'none', 'none')
 call s:HL('texRefLabel', 'byellow', 'none', 'none')
 call s:HL('texRefZone', 'ngreen', 'none', 'none')
-call s:HL('texSection', 'nred', 'none', 'none')
+call s:HL('texSection', 'none', 'none', 'bold')
 call s:HL('texComment', 'gray12', 'none', 'none')
+call s:HL('texInputCurlies', 'none', 'none', 'none')
 call s:HL('plaintexControlSequence', 'gray12', 'none', 'none')
-call s:HL('texDelimiter', 'nblue', 'none', 'none')
+call s:HL('texDelimiter', 'none', 'none', 'none')
 call s:HL('texMathZoneX', 'hcontrast', 'none', 'none')
-call s:HL('texSpecialChar', 'ngreen', 'none', 'none')
-augroup trafficlights_tex
-    au!
-    au BufRead,BufNewFile *.tex syn region texMathZoneV start="\\(" end="\\)\|%stopzone\>" keepend contains=@texMathZoneGroup
-    au BufRead,BufNewFile *.tex syn region texMathZoneX start="\$" skip="\\\\\|\\\$" end="\$\|%stopzone\>" keepend contains=@texMathZoneGroup
-augroup END
+call s:HL('texSpecialChar', 'nred', 'none', 'none')
+call s:HL('texInputfile', 'none', 'none', 'none')
+call s:HL('texBoldStyle', 'none', 'none', 'none')
+call s:HL('texItalStyle', 'hcontrast', 'vlcontrast', 'none')
+" augroup trafficlights_tex
+"     au!
+"     au BufRead,BufNewFile *.tex syn region texMathZoneV start="\\(" end="\\)\|%stopzone\>" keepend contains=@texMathZoneGroup
+"     au BufRead,BufNewFile *.tex syn region texMathZoneX start="\$" skip="\\\\\|\\\$" end="\$\|%stopzone\>" keepend contains=@texMathZoneGroup
+" augroup END
 " }}}
 
 " Markdown {{{
@@ -492,25 +511,26 @@ call s:HL('markdownHeadingRule', 'none', 'none', 'bold')
 call s:HL('markdownRule', 'none', 'none', 'bold')
 call s:HL('markdownHeadingDelimiter', 'none', 'none', 'bold')
 call s:HL('markdownOrderedListMarker', 'none', 'none', 'bold')
-call s:HL('markdownListMarker', 'none', 'none', 'bold')
-call s:HL('markdownBlockQuote', 'none', 'none', 'bold')
-call s:HL('markdownItalic', 'nyellow', 'none', 'none')
-call s:HL('markdownBold', 'nyellow', 'none', 'none')
+call s:HL('markdownListMarker', 'gray12', 'none', 'bold')
+call s:HL('markdownBlockQuote', 'gray12', 'none', 'bold')
+call s:HL('markdownItalic', 'vhcontrast', 'vlcontrast', 'none')
+call s:HL('markdownBold', 'vhcontrast', 'none', 'bold')
 call s:HL('markdownH1', 'none', 'none', 'bold')
 call s:HL('markdownH2', 'none', 'none', 'bold')
 call s:HL('markdownH3', 'none', 'none', 'bold')
 call s:HL('markdownH4', 'none', 'none', 'bold')
 call s:HL('markdownH5', 'none', 'none', 'bold')
 call s:HL('markdownH6', 'none', 'none', 'bold')
-call s:HL('markdownLinkText', 'ncyan', 'none', 'none')
-call s:HL('markdownIdDeclaration', 'nmagenta')
+call s:HL('markdownLinkText', 'vhcontrast', 'none', 'none')
+call s:HL('markdownError', 'vhcontrast', 'nred', 'none')
+call s:HL('markdownIdDeclaration', 'gray12')
 call s:HL('markdownAutomaticLink', 'nblue', 'none', 'none')
-call s:HL('markdownUrl', 'nblue', 'none', 'none')
+call s:HL('markdownUrl', 'gray12', 'none', 'none')
 call s:HL('markdownUrldelimiter', 'gray12', 'none', 'none')
 call s:HL('markdownLinkTextDelimiter', 'gray12', 'none', 'none')
-call s:HL('markdownCodeDelimiter', 'nmagenta', 'none', 'none')
-call s:HL('markdownCode', 'nmagenta', 'none', 'none')
-call s:HL('markdownCodeBlock', 'nmagenta', 'none', 'none')
+call s:HL('markdownCodeDelimiter', 'vhcontrast', 'none', 'none')
+call s:HL('markdownCode', 'vhcontrast', 'none', 'none')
+call s:HL('markdownCodeBlock', 'vhcontrast', 'none', 'none')
 " }}}
 
 " Python {{{
@@ -538,11 +558,11 @@ call s:HL('rubyModule', 'none', 'none', 'bold')
 call s:HL('rubyInclude', 'none', 'none', 'none')
 call s:HL('rubyDefine', 'none', 'none', 'bold')
 call s:HL('rubyRegexp', 'ngreen', 'none', 'none')
-" call s:HL('rubyRegexpCharClass', 'ngreen', 'none', 'none')
-" call s:HL('rubyRegexpAnchor', 'ngreen', 'none', 'none')
-" call s:HL('rubyRegexpQuantifier', 'ngreen', 'none', 'none')
-" call s:HL('rubyRegexpDelimiter', 'ngreen', 'none', 'none')
-" call s:HL('rubyStringDelimiter', 'ngreen', 'none', 'none')
+call s:HL('rubyRegexpCharClass', 'ngreen', 'none', 'none')
+call s:HL('rubyRegexpAnchor', 'ngreen', 'none', 'none')
+call s:HL('rubyRegexpQuantifier', 'ngreen', 'none', 'none')
+call s:HL('rubyRegexpDelimiter', 'ngreen', 'none', 'none')
+call s:HL('rubyStringDelimiter', 'ngreen', 'none', 'none')
 " call s:HL('rubyString', 'ngreen', 'none', 'none')
 call s:HL('rubySymbol', 'none', 'none', 'none')
 call s:HL('rubyTodo', 'hcontrast', 'lcontrast', 'bold')
