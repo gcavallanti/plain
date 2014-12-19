@@ -236,13 +236,13 @@ call s:HL('Constant', 'hcontrast', 'none', 'none')
 call s:HL('Character', 'hcontrast', 'none', 'none')
 call s:HL('Boolean', 'hcontrast', 'none', 'none')
 
-call s:HL('Number', 'gray11', 'none', 'none')
-call s:HL('Float', 'gray09', 'none', 'none')
+call s:HL('Number', 'hcontrast', 'none', 'none')
+call s:HL('Float', 'gray11', 'none', 'none')
 
 if &background == 'dark'
-  call s:HL('String', 'gray11', 'vlcontrast', 'none')
+  call s:HL('String', 'hcontrast', 'vlcontrast', 'none')
 else
-  call s:HL('String', 'gray09', 'vlcontrast', 'none')
+  call s:HL('String', 'hcontrast', 'vlcontrast', 'none')
 endif
 
 call s:HL('SpecialChar', 'nred', 'none', 'none')
@@ -383,10 +383,14 @@ call s:HL('javaScriptMember', 'hcontrast', 'none', 'none')
 call s:HL('gitDiff', 'gray09', 'none',)
 call s:HL('diffRemoved', 'nred', 'none',)
 call s:HL('diffAdded', 'ngreen', 'none',)
-call s:HL('diffFile', 'nyellow', 'none', 'none')
-call s:HL('diffNewFile', 'nyellow', 'none', 'none')
-call s:HL('diffLine', 'nyellow', 'none', 'none')
-call s:HL('diffSubname', 'byellow', 'none', 'none')
+call s:HL('diffFile', 'none', 'none', 'bold')
+call s:HL('diffNewFile', 'none', 'none', 'bold')
+call s:HL('diffLine', 'lcontrast', 'none', 'none')
+call s:HL('gitDiff', 'none', 'none', 'none')
+call s:HL('diffSubname', 'lcontrast', 'none', 'none')
+call s:HL('gitEmail', 'none', 'none', 'none')
+call s:HL('gitIdentity', 'none', 'none', 'none')
+call s:HL('gitDate', 'none', 'none', 'none')
 " }}}
 
 " fugitive {{{
@@ -544,9 +548,9 @@ call s:HL('pythonBuiltin', 'none', 'none', 'bold')
 call s:HL('pythonBuiltinObj', 'nblue')
 call s:HL('pythonBuiltinFunc', 'nblue')
 call s:HL('pythonFunction', 'hcontrast')
-call s:HL('pythonEscape', 'nblue')
-call s:HL('pythonException', 'ngreen', 'none', 'none')
-call s:HL('pythonExceptions', 'ngreen', 'none', 'none')
+call s:HL('pythonEscape', 'hcontrast', 'vlcontrast')
+call s:HL('pythonException', 'none', 'none', 'bold')
+call s:HL('pythonExceptions', 'none', 'none', 'bold')
 call s:HL('pythonPrecondit', 'ngreen', 'none', 'none')
 call s:HL('pythonInclude', 'none', 'none', 'bold')
 " call s:HL('pythonString', 'nmagenta', 'none', 'none')
@@ -554,6 +558,7 @@ call s:HL('pythonDecorator', 'ngreen', 'none', 'none')
 call s:HL('pythonRun', 'hcontrast', 'none', 'bold')
 " call s:HL('pythonRepeat', 'gray18', 'none', 'bold')
 call s:HL('pythonCoding', 'hcontrast', 'none', 'bold')
+call s:HL('pythonDocTest', 'none', 'none', 'none')
 " }}}
 
 " Ruby {{{
