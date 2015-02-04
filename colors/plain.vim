@@ -61,7 +61,8 @@ let s:bwc.ncyan    = ['#5fafff', 6]  "6
 let s:bwc.bcyan    = ['#0087d7', 14] "14
 
 let s:bwc.background       = ['#f2f2f2', 232]
-
+let s:bwc.yellow    = ['#0087d7', 222] "14
+let s:bwc.red    = ['#0087d7', 203] "14
 if &background == 'dark'
 
     let s:bwc.lcontrast  = ['#080808', 0]
@@ -156,7 +157,7 @@ call s:HL('TabLineSel', 'vhcontrast', 'gray09', 'none')
 call s:HL('NonText', 'lcontrast', 'none', 'none')
 call s:HL('SpecialKey', 'hcontrast', 'none', 'none')
 
-call s:HL('Search', 'vhcontrast', 'lcontrast', 'none')
+call s:HL('Search', 'gray03', 'yellow', 'none')
 call s:HL('IncSearch', 'lcontrast', 'vhcontrast', 'none')
 call s:HL('Underlined', 'none', 'none', 'underline')
 
@@ -197,7 +198,7 @@ call s:HL('SignColumn', 'none', 'none', 'none')
 " }}}
 
 call s:HL('Pmenu', 'gray00', 'gray18', 'none')
-call s:HL('PmenuSel', 'gray24', 'gray06', 'none')
+call s:HL('PmenuSel', 'gray24', 'red', 'none')
 call s:HL('PmenuSbar', 'none', 'gray09', 'none')
 call s:HL('PmenuThumb', 'gray06', 'gray06', 'none')
  
@@ -212,7 +213,7 @@ call s:HL('Special', 'nyellow', 'none', 'none')
 
 call s:HL('MatchParen', 'vhcontrast', 'lcontrast', 'bold')
 
-call s:HL('Comment', 'lcontrast', 'none', 'none')
+call s:HL('Comment', 'lcontrast', 'none', 'italic')
 call s:HL('Todo', 'gray09', 'none', 'none')
 call s:HL('SpecialComment', 'nred', 'none', 'bold')
 
@@ -262,8 +263,8 @@ call s:HL('Ignore', 'hcontrast', 'none', 'none')
 " Help {{{
 call s:HL('helpHyperTextEntry', 'vhcontrast', 'none', 'bold')
 call s:HL('helpSectionDelim', 'vhcontrast', 'none', 'bold')
-call s:HL('helpSpecial', 'hcontrast', 'vlcontrast', 'none')
-call s:HL('helpExample', 'hcontrast', 'vlcontrast', 'none')
+call s:HL('helpSpecial', 'hcontrast', 'none', 'none')
+call s:HL('helpExample', 'hcontrast', 'none', 'none')
 call s:HL('helpHeader', 'vhcontrast', 'none', 'bold')
 call s:HL('helpNotVi', 'lcontrast', 'none', 'none')
 " }}}
@@ -338,11 +339,11 @@ call s:HL('IndentGuidesEven', 'gray00', 'gray06', 'none')
 " }}}
 
 " TagBar {{{
-call s:HL('TagBarScope', 'nmagenta', 'none', 'none')
-call s:HL('TagBarKind', 'nred', 'none', 'none')
-call s:HL('TagBarNestedKind', 'nred', 'none', 'none')
-call s:HL('TagBarType', 'bmagenta', 'none', 'none')
-call s:HL('TagBarFoldIcon', 'gray09', 'none', 'none')
+call s:HL('TagBarScope', 'vhcontrast', 'none', 'bold')
+call s:HL('TagBarKind', 'vhcontrast', 'none', 'bold')
+call s:HL('TagBarNestedKind', 'hcontrast', 'none', 'none')
+call s:HL('TagBarType', 'hcontrast', 'none', 'none')
+call s:HL('TagBarFoldIcon', 'vhcontrast', 'none', 'none')
 call s:HL('TagBarVisibilityPublic', 'ngreen', 'none', 'none')
 call s:HL('TagBarVisibilityProtected', 'nyellow', 'none', 'none')
 call s:HL('TagBarVisibilityPrivate', 'nred', 'none', 'none')
@@ -464,12 +465,12 @@ call s:HL('javaSpecialChar', 'ngreen', 'none', 'none')
 call s:HL('VimMapModKey', 'none', 'none', 'bold')
 call s:HL('VimCommand', 'vhcontrast', 'none', 'bold')
 call s:HL('VimFuncSID', 'none', 'none', 'none')
-call s:HL('VimCommentTitle', 'hcontrast', 'lcontrast', 'bold')
+call s:HL('VimCommentTitle', 'lcontrast', 'none', 'none')
 call s:HL('VimMapMod', 'none', 'none', 'none')
 call s:HL('VimNotation', 'none', 'none', 'none')
 call s:HL('VimBracket', 'none', 'none', 'none')
 call s:HL('VimParenSep', 'none', 'none', 'none')
-call s:HL('VimOption', 'none', 'none', 'bold')
+" call s:HL('VimOption', 'none', 'none', 'none')
 call s:HL('VimFunction', 'hcontrast', 'none', 'none')
 call s:HL('VimFuncName', 'vhcontrast', 'none', 'bold')
 call s:HL('VimFuncSID', 'hcontrast', 'none', 'none')
@@ -562,10 +563,10 @@ call s:HL('markdownCodeBlock', 'hcontrast', 'vlcontrast', 'none')
 " }}}
 
 " Python {{{
-call s:HL('pythonBuiltin', 'vhcontrast', 'none', 'bold')
+call s:HL('pythonBuiltin', 'hcontrast', 'none', 'none')
 call s:HL('pythonBuiltinObj', 'nblue')
 call s:HL('pythonBuiltinFunc', 'nblue')
-call s:HL('pythonFunction', 'none')
+call s:HL('pythonFunction', 'none', 'none', 'none')
 call s:HL('pythonEscape', 'hcontrast', 'vlcontrast')
 call s:HL('pythonException', 'none', 'none', 'bold')
 call s:HL('pythonExceptions', 'none', 'none', 'bold')
