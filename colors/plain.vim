@@ -177,7 +177,7 @@ call s:HL('Tag', 'none', 'none', 'underline')
 
 call s:HL('WildMenu', 'gray24', 'gray06', 'none')
 
-call s:HL('VertSplit', 'gray14', 'gray19', 'none')
+call s:HL('VertSplit', 'gray14', 'gray20', 'none')
 call s:HL('StatusLine', 'gray08', 'gray20', 'none')
 call s:HL('StatusLineNC', 'gray09', 'gray20', 'none')
 call s:HL('User1', 'gray04', 'gray14', 'none')
@@ -272,8 +272,8 @@ call s:HL('helpNote', 'lcontrast', 'none', 'none')
 " }}}
 
 " Diffs {{{
-call s:HL('DiffDelete', 'nred', 'bred', 'none')
-call s:HL('DiffAdd', 'ngreen', 'bgreen', 'none')
+call s:HL('DiffDelete', 'vlcontrast', 'none', 'none')
+call s:HL('DiffAdd', 'nblue', 'bblue', 'none')
 call s:HL('DiffChange', 'nblue', 'bblue', 'none')
 call s:HL('DiffText', 'gray23', 'nblue', 'none')
 " }}}
