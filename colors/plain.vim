@@ -60,15 +60,15 @@ let s:bwc.bmagenta = ['#5f00af', 13] "13
 let s:bwc.ncyan    = ['#5fafff', 6]  "6
 let s:bwc.bcyan    = ['#0087d7', 14] "14
 
-let s:bwc.background       = ['#f2f2f2', 232]
+let s:bwc.background       = ['#2b2b2b', 232]
 let s:bwc.yellow    = ['#0087d7', 222] "14
 let s:bwc.red    = ['#0087d7', 203] "14
 if &background == 'dark'
 
-    let s:bwc.lcontrast  = ['#080808', 0]
-    let s:bwc.vlcontrast  = ['#080808', 8]
-    let s:bwc.hcontrast  = ['#080808', 15]
-    let s:bwc.vhcontrast  = ['#080808', 7]
+    let s:bwc.lcontrast  = ['#777777', 0]
+    let s:bwc.vlcontrast  = ['#565656', 8]
+    let s:bwc.hcontrast  = ['#939393', 15]
+    let s:bwc.vhcontrast  = ['#dcdcdc', 7]
 
     " let s:bwc.lcontrast = s:bwc.gray07
 else
@@ -132,7 +132,7 @@ endfunction
 " General/UI {{{
 
 if has('gui_running')
-    call s:HL('Normal', 'gray17', 'background', 'none')
+    call s:HL('Normal', 'gray23', 'background', 'none')
 else
     " if &background == 'dark'
     "     call s:HL('Normal', 'gray17', 'none', 'none')
@@ -157,7 +157,8 @@ call s:HL('TabLineSel', 'vhcontrast', 'gray09', 'none')
 call s:HL('NonText', 'lcontrast', 'none', 'none')
 call s:HL('SpecialKey', 'hcontrast', 'none', 'none')
 
-call s:HL('Search', 'gray03', 'yellow', 'none')
+call s:HL('Search', 'ngreen', 'none', 'none')
+" call s:HL('Search', 'vhcontrast', 'lcontrast', 'none')
 call s:HL('IncSearch', 'lcontrast', 'vhcontrast', 'none')
 call s:HL('Underlined', 'none', 'none', 'underline')
 
@@ -177,18 +178,18 @@ call s:HL('Tag', 'none', 'none', 'underline')
 call s:HL('WildMenu', 'gray24', 'gray06', 'none')
 
 call s:HL('VertSplit', 'gray14', 'gray19', 'none')
-call s:HL('StatusLine', 'gray02', 'gray20', 'none')
-call s:HL('StatusLineNC', 'gray03', 'gray19', 'none')
-call s:HL('User1', 'lcontrast', 'ngreen', 'none')
-call s:HL('User2', 'gray06', 'gray18', 'none')
-call s:HL('User3', 'gray24', 'gray03', 'none' )
-call s:HL('User4', 'gray00', 'gray18', 'bold')
-call s:HL('User5', 'none', 'none', 'none')
-call s:HL('User6', 'none', 'none', 'none')
-call s:HL('User7', 'none', 'none', 'none')
-call s:HL('User8', 'none', 'none', 'none')
-call s:HL('User9', 'none', 'none', 'none')
-call s:HL('User0', 'none', 'none', 'none')
+call s:HL('StatusLine', 'gray08', 'gray20', 'none')
+call s:HL('StatusLineNC', 'gray09', 'gray20', 'none')
+call s:HL('User1', 'gray04', 'gray14', 'none')
+call s:HL('User2', 'gray02', 'gray20', 'none')
+call s:HL('User3', 'gray05', 'gray17', 'none' )
+call s:HL('User4', 'gray03', 'gray20', 'none')
+call s:HL('User5', 'gray08', 'gray20', 'none')
+call s:HL('User6', 'gray08', 'gray20', 'none')
+call s:HL('User7', 'gray03', 'gray20', 'none')
+call s:HL('User8', 'gray04', 'gray20', 'none')
+call s:HL('User9', 'gray03', 'gray20', 'none')
+call s:HL('User0', 'gray24', 'gray04', 'none')
 
 " Gutter {{{
 call s:HL('CursorLineNr', 'hcontrast', 'vlcontrast', 'none')
@@ -198,7 +199,7 @@ call s:HL('SignColumn', 'none', 'none', 'none')
 " }}}
 
 call s:HL('Pmenu', 'gray00', 'gray18', 'none')
-call s:HL('PmenuSel', 'gray24', 'red', 'none')
+call s:HL('PmenuSel', 'gray24', 'nblue', 'none')
 call s:HL('PmenuSbar', 'none', 'gray09', 'none')
 call s:HL('PmenuThumb', 'gray06', 'gray06', 'none')
  
@@ -209,9 +210,9 @@ call s:HL('iCursor', 'gray24', 'bred', 'none')
 " }}}
 
 " Syntax highlighting {{{
-call s:HL('Special', 'nyellow', 'none', 'none')
+call s:HL('Special', 'nmagenta', 'none', 'none')
 
-call s:HL('MatchParen', 'vhcontrast', 'lcontrast', 'bold')
+call s:HL('MatchParen', 'nblue', 'none', 'bold')
 
 call s:HL('Comment', 'lcontrast', 'none', 'none')
 call s:HL('Todo', 'gray09', 'none', 'none')
@@ -246,7 +247,7 @@ else
   call s:HL('String', 'hcontrast', 'vlcontrast', 'none')
 endif
 
-call s:HL('SpecialChar', 'nred', 'none', 'none')
+call s:HL('SpecialChar', 'hcontrast', 'vlcontrast', 'none')
 
 call s:HL('Type', 'vhcontrast', 'none', 'bold')
 call s:HL('Typedef', 'vhcontrast', 'none', 'bold')
@@ -255,7 +256,7 @@ call s:HL('Structure', 'vhcontrast', 'none', 'bold')
 
 call s:HL('Exception', 'nred', 'none', 'bold')
 
-call s:HL('Error', 'gray24', 'bred', 'bold')
+call s:HL('Error', 'nred', 'bred', 'none')
 call s:HL('Debug', 'gray24', 'none', 'bold')
 call s:HL('Ignore', 'hcontrast', 'none', 'none')
 " }}}
@@ -267,6 +268,7 @@ call s:HL('helpSpecial', 'hcontrast', 'none', 'none')
 call s:HL('helpExample', 'hcontrast', 'none', 'none')
 call s:HL('helpHeader', 'vhcontrast', 'none', 'bold')
 call s:HL('helpNotVi', 'lcontrast', 'none', 'none')
+call s:HL('helpNote', 'lcontrast', 'none', 'none')
 " }}}
 
 " Diffs {{{
@@ -307,9 +309,10 @@ endif
 " }}}
 
 " quickfix {{{
-call s:HL('qfFilename', 'none', 'none', 'bold')
+call s:HL('qfFilename', 'none', 'none', 'none')
 call s:HL('qfSeparator', 'none', 'none', 'none')
 call s:HL('qfLineNr', 'none', 'none', 'none')
+call s:HL('qfError', 'none', 'none', 'none')
 " }}}
 
 " }}}
@@ -317,15 +320,15 @@ call s:HL('qfLineNr', 'none', 'none', 'none')
 " Plugins {{{
 
 " CtrlP {{{
-call s:HL('CtrlPMatch', 'none', 'none', 'bold')
+call s:HL('CtrlPMatch', 'vhcontrast', 'none', 'bold')
 call s:HL('CtrlPLinePre', 'gray09', 'none', 'none')
 call s:HL('CtrlPPrtBase', 'gray09', 'none', 'none')
 call s:HL('CtrlPPrtText', 'none', 'none', 'none')
 call s:HL('CtrlPPrtCursor', 'gray24', 'gray18', 'none')
 call s:HL('CtrlPNoEntries', 'nred', 'none', 'none')
-call s:HL('CtrlPMode1', 'gray02', 'gray17', 'none')
-call s:HL('CtrlPMode2', 'gray02', 'gray17', 'none')
-call s:HL('CtrlPStats', 'gray02', 'gray17', 'none')
+call s:HL('CtrlPMode1', 'gray02', 'gray20', 'none')
+call s:HL('CtrlPMode2', 'gray04', 'gray14', 'none')
+call s:HL('CtrlPStats', 'gray04', 'gray14', 'none')
 " }}}
 
 " EasyMotion {{{
@@ -371,6 +374,7 @@ call s:HL('cssIdentifier', 'hcontrast', 'none', 'none')
 call s:HL('cssClassName', 'hcontrast', 'none', 'none')
 call s:HL('cssClassNameDot', 'hcontrast', 'none', 'none')
 call s:HL('cssFunctionName', 'none', 'none', 'none')
+call s:HL('cssFontDescriptor', 'vhcontrast', 'none', 'bold')
 call s:HL('cssFunctionComma', 'none', 'none', 'none')
 call s:HL('cssTagName', 'vhcontrast', 'none', 'bold')
 call s:HL('cssPseudoClassId', 'none', 'none', 'none')
@@ -378,12 +382,32 @@ call s:HL('cssPseudoClassFn', 'none', 'none', 'none')
 call s:HL('cssImportant', 'none', 'none', 'none')
 " }}}
 
-" " Syntastic {{{
-" call s:HL('SyntasticError', 'none', 'none', 'none')
-" call s:HL('SyntasticWarning', 'none', 'none', 'none')
-" call s:HL('SyntasticStyleError', 'none', 'none', 'none')
-" call s:HL('SyntasticStyleWarning', 'none', 'none', 'none')
-" " }}}
+" Spelling {{{
+" call s:HL('SpellBad', 'nred', 'nblue', 'underline')
+" }}}
+" Syntastic {{{
+call s:HL('SyntasticError', 'bred', 'none', 'none')
+call s:HL('SyntasticWarning', 'byellow', 'none', 'none')
+call s:HL('SyntasticStyleError', 'bred', 'none', 'none')
+call s:HL('SyntasticStyleWarning', 'byellow', 'none', 'none')
+
+call s:HL('SyntasticErrorSign', 'bred', 'none', 'none')
+call s:HL('SyntasticWarningSign', 'byellow', 'none', 'none')
+call s:HL('SyntasticStyleErrorSign', 'bred', 'none', 'none')
+call s:HL('SyntasticStyleWarningSign', 'byellow', 'none', 'none')
+
+call s:HL('SyntasticErrorLine', 'nred', 'none', 'none')
+call s:HL('SyntasticWarningLine', 'nyellow', 'none', 'none')
+call s:HL('SyntasticStyleErrorLine', 'nred', 'none', 'none')
+call s:HL('SyntasticStyleWarningLine', 'nyellow', 'none', 'none')
+" }}}
+
+" javascript {{{
+call s:HL('scalaPackage', 'vhcontrast', 'none', 'bold')
+call s:HL('scalaImport', 'vhcontrast', 'none', 'bold')
+call s:HL('scalaConstructor', 'none', 'none', 'none')
+call s:HL('scalaClassname', 'none', 'none', 'none')
+" }}}
 
 " javascript {{{
 call s:HL('javaScriptIdentifier', 'none', 'none', 'bold')
@@ -447,17 +471,18 @@ call s:HL('javaScriptMember', 'none', 'none', 'none')
 " }}} 
 
 " Java {{{
-call s:HL('javaClassDecl', 'hcontrast', 'none', 'none')
-call s:HL('javaScopeDecl', 'none', 'none', 'bold')
+call s:HL('javaClassDecl', 'vhcontrast', 'none', 'bold')
+call s:HL('javaScopeDecl', 'vhcontrast', 'none', 'bold')
 call s:HL('javaCommentTitle', 'lcontrast', 'none', 'none')
 call s:HL('javaDocTags', 'hcontrast', 'none', 'none')
 call s:HL('javaDocParam', 'none', 'none', 'none')
-call s:HL('javaStorageClass', 'hcontrast', 'none', 'none')
+call s:HL('javaStorageClass', 'vhcontrast', 'none', 'bold')
 call s:HL('javaAnnotation', 'hcontrast', 'none', 'none')
 call s:HL('javaTypedef', 'hcontrast', 'none', 'none')
-call s:HL('javaType', 'hcontrast', 'none', 'none')
+call s:HL('javaType', 'vhcontrast', 'none', 'bold')
 call s:HL('javaBraces', 'none', 'none', 'none')
-call s:HL('javaExternal', 'hcontrast', 'none', 'none')
+call s:HL('javaTodo', 'lcontrast', 'none', 'none')
+call s:HL('javaExternal', 'vhcontrast', 'none', 'bold')
 call s:HL('javaSpecialChar', 'ngreen', 'none', 'none')
 " }}}
 
@@ -466,6 +491,7 @@ call s:HL('VimMapModKey', 'none', 'none', 'bold')
 call s:HL('VimCommand', 'vhcontrast', 'none', 'bold')
 call s:HL('VimFuncSID', 'none', 'none', 'none')
 call s:HL('VimCommentTitle', 'lcontrast', 'none', 'none')
+call s:HL('VimHiGroup', 'none', 'none', 'none')
 call s:HL('VimMapMod', 'none', 'none', 'none')
 call s:HL('VimNotation', 'none', 'none', 'none')
 call s:HL('VimBracket', 'none', 'none', 'none')
