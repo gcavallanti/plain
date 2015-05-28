@@ -188,12 +188,12 @@ call s:HL('Tag', 'none', 'none', 'underline')
 
 call s:HL('WildMenu', 'gray25', 'gray07', 'none')
 
-call s:HL('VertSplit', 'gray15', 'gray19', 'none')
-call s:HL('StatusLine', 'gray12', 'gray19', 'none')
-call s:HL('StatusLineNC', 'gray10', 'gray19', 'none')
-call s:HL('User1', 'gray07', 'gray19', 'none')
-call s:HL('User2', 'gray03', 'gray19', 'none')
-call s:HL('User3', 'gray07', 'gray19', 'none' )
+call s:HL('VertSplit', 'lcontrast', 'hcontrast', 'none')
+call s:HL('StatusLine', 'lcontrast', 'vhcontrast', 'none')
+call s:HL('StatusLineNC', 'lcontrast', 'hcontrast', 'none')
+call s:HL('User1', 'lcontrast', 'vhcontrast', 'none')
+call s:HL('User2', 'vlcontrast', 'vhcontrast', 'none')
+call s:HL('User3', 'lcontrast', 'vhcontrast', 'none' )
 call s:HL('User4', 'gray04', 'gray21', 'none')
 call s:HL('User5', 'gray09', 'gray21', 'none')
 call s:HL('User6', 'gray09', 'gray21', 'none')
@@ -209,10 +209,10 @@ call s:HL('FoldColumn', 'lcontrast', 'vlcontrast', 'none')
 call s:HL('SignColumn', 'none', s:gutter, 'none')
 " }}}
 
-call s:HL('Pmenu', 'gray01', 'gray19', 'none')
+call s:HL('Pmenu', 'lcontrast', 'vhcontrast', 'none')
 call s:HL('PmenuSel', 'gray25', 'nblue', 'none')
-call s:HL('PmenuSbar', 'none', 'gray10', 'none')
-call s:HL('PmenuThumb', 'gray07', 'gray07', 'none')
+call s:HL('PmenuSbar', 'none', 'hcontrast', 'none')
+call s:HL('PmenuThumb', 'none', 'lcontrast', 'none')
  
 " Cursor {{{
 call s:HL('Cursor', 'gray00', 'ngreen', 'none')
