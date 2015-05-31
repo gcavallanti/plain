@@ -153,7 +153,7 @@ endif
 
 
 
-call s:HL('Folded', 'lcontrast', 'vlcontrast', 'none')
+call s:HL('Folded', 'none', 'none', 'none')
 call s:HL('CursorLine', 'none', 'vlcontrast', 'none')
 call s:HL('CursorColumn', 'none', 'vlcontrast', 'none')
 call s:HL('ColorColumn', 'none', 'lcontrast', 'none')
@@ -161,12 +161,12 @@ call s:HL('Visual', 'vhcontrast', 'lcontrast', 'none')
 call s:HL('VisualNOS', 'hcontrast', 'lcontrast', 'none')
 
 " GUI
-call s:HL('TabLine', 'none', 'gray07', 'none')
-call s:HL('TabLineFill', 'gray19', 'none', 'none')
-call s:HL('TabLineSel', 'vhcontrast', 'gray10', 'none')
+call s:HL('TabLine', 'hcontrast', 'lcontrast', 'none')
+call s:HL('TabLineFill', 'none', 'none', 'none')
+call s:HL('TabLineSel', 'vlcontrast', 'vhcontrast', 'none')
 
 call s:HL('NonText', 'lcontrast', 'none', 'none')
-call s:HL('SpecialKey', 'hcontrast', 'none', 'none')
+call s:HL('SpecialKey', 'lcontrast', 'none', 'none')
 
 call s:HL('Search', 'nblue', 'none', 'none')
 " call s:HL('Search', 'vhcontrast', 'lcontrast', 'none')
@@ -209,9 +209,9 @@ call s:HL('FoldColumn', 'lcontrast', 'vlcontrast', 'none')
 call s:HL('SignColumn', 'none', s:gutter, 'none')
 " }}}
 
-call s:HL('Pmenu', 'lcontrast', 'vhcontrast', 'none')
-call s:HL('PmenuSel', 'gray25', 'nblue', 'none')
-call s:HL('PmenuSbar', 'none', 'hcontrast', 'none')
+call s:HL('Pmenu', 'vlcontrast', 'hcontrast', 'none')
+call s:HL('PmenuSel', 'gray25', 'nred', 'none')
+call s:HL('PmenuSbar', 'none', 'vhcontrast', 'none')
 call s:HL('PmenuThumb', 'none', 'lcontrast', 'none')
  
 " Cursor {{{
@@ -226,7 +226,7 @@ call s:HL('Special', 'vhcontrast', 'none', 'none')
 call s:HL('MatchParen', 'nblue', 'none', 'bold')
 
 call s:HL('Comment', 'lcontrast', 'none', 'none')
-call s:HL('Todo', 'gray10', 'none', 'none')
+call s:HL('Todo', 'ngreen', 'none', 'none')
 call s:HL('SpecialComment', 'nred', 'none', 'bold')
 
 call s:HL('Statement', 'vhcontrast', 'none', 'bold')
@@ -252,11 +252,7 @@ call s:HL('Boolean', 'hcontrast', 'none', 'none')
 call s:HL('Number', 'hcontrast', 'none', 'none')
 call s:HL('Float', 'hcontrast', 'none', 'none')
 
-if &background == 'dark'
-  call s:HL('String', 'hcontrast', 'vlcontrast', 'none')
-else
-  call s:HL('String', 'hcontrast', 'none', 'none')
-endif
+call s:HL('String', 'hcontrast', 'vlcontrast', 'none')
 
 call s:HL('SpecialChar', 'vhcontrast', 'none', 'none')
 
@@ -282,11 +278,18 @@ call s:HL('helpNotVi', 'lcontrast', 'none', 'none')
 call s:HL('helpNote', 'lcontrast', 'none', 'none')
 " }}}
 
+" Undotree {{{
+call s:HL('UndotreeNode', 'lcontrast', 'none', 'none')
+call s:HL('UndotreeCurrent', 'nred', 'none', 'bold')
+call s:HL('UndotreeNodeCurrent', 'nred', 'none', 'bold')
+call s:HL('UndotreeSavedSmall', 'lcontrast', 'none', 'bold')
+call s:HL('UndotreeSavedBig', 'vhcontrast', 'none', 'bold')
+" }}}
 " Diffs {{{
 call s:HL('DiffDelete', 'vlcontrast', 'none', 'none')
-call s:HL('DiffAdd', 'gray24', 'nblue', 'none')
+call s:HL('DiffAdd', 'nblue', 'bblue', 'none')
 call s:HL('DiffChange', 'nblue', 'bblue', 'none')
-call s:HL('DiffText', 'gray24', 'nblue', 'none')
+call s:HL('DiffText', 'gray25', 'bblue', 'none')
 " }}}
 
 " GitGutter {{{
@@ -337,9 +340,9 @@ call s:HL('CtrlPPrtBase', 'lcontrast', 'none', 'none')
 call s:HL('CtrlPPrtText', 'none', 'none', 'none')
 call s:HL('CtrlPPrtCursor', 'gray25', 'gray17', 'none')
 call s:HL('CtrlPNoEntries', 'nred', 'none', 'none')
-call s:HL('CtrlPMode1', 'gray05', 'gray19', 'none')
-call s:HL('CtrlPMode2', 'gray05', 'gray19', 'none')
-call s:HL('CtrlPStats', 'gray05', 'gray15', 'none')
+call s:HL('CtrlPMode1', 'vlcontrast', 'vhcontrast', 'none')
+call s:HL('CtrlPMode2', 'vlcontrast', 'vhcontrast', 'none')
+call s:HL('CtrlPStats', 'lcontrast', 'vhcontrast', 'none')
 " }}}
 
 " TagBar {{{
@@ -418,17 +421,21 @@ call s:HL('javaScriptMember', 'hcontrast', 'none', 'none')
 " }}}
 
 " Diff {{{
-call s:HL('gitDiff', 'gray10', 'none',)
+call s:HL('diffAdded', 'ngreen', 'none', 'none')
+call s:HL('diffChanged', 'nyellow', 'none', 'none')
+call s:HL('diffFile', 'nmagenta', 'none', 'none')
+call s:HL('diffLine', 'ncyan', 'none', 'none')
+call s:HL('diffNewFile', 'nmagenta', 'none', 'none')
+call s:HL('diffOldFile', 'none', 'none', 'none')
 call s:HL('diffRemoved', 'nred', 'none',)
-call s:HL('diffAdded', 'ngreen', 'none',)
-call s:HL('diffFile', 'none', 'none', 'bold')
-call s:HL('diffNewFile', 'none', 'none', 'bold')
-call s:HL('diffLine', 'lcontrast', 'none', 'none')
+call s:HL('diffSubname', 'none', 'none', 'none')
+" }}}
+
+" Git {{{
+call s:HL('gitDate', 'none', 'none', 'none')
 call s:HL('gitDiff', 'none', 'none', 'none')
-call s:HL('diffSubname', 'lcontrast', 'none', 'none')
 call s:HL('gitEmail', 'none', 'none', 'none')
 call s:HL('gitIdentity', 'none', 'none', 'none')
-call s:HL('gitDate', 'none', 'none', 'none')
 " }}}
 
 " fugitive {{{
@@ -480,7 +487,6 @@ call s:HL('javaAnnotation', 'hcontrast', 'none', 'none')
 call s:HL('javaTypedef', 'hcontrast', 'none', 'none')
 call s:HL('javaType', 'vhcontrast', 'none', 'bold')
 call s:HL('javaBraces', 'none', 'none', 'none')
-call s:HL('javaTodo', 'lcontrast', 'none', 'none')
 call s:HL('javaExternal', 'vhcontrast', 'none', 'bold')
 call s:HL('javaExceptions', 'vhcontrast', 'none', 'bold')
 call s:HL('javaSpecialChar', 'vhcontrast', 'none', 'none')
@@ -610,7 +616,6 @@ call s:HL('rubyRegexpQuantifier', 'hcontrast', 'vlcontrast', 'none')
 call s:HL('rubyRegexpDelimiter', 'hcontrast', 'vlcontrast', 'none')
 call s:HL('rubyStringDelimiter', 'hcontrast', 'vlcontrast', 'none')
 call s:HL('rubySymbol', 'none', 'none', 'none')
-call s:HL('rubyTodo', 'lcontrast', 'none', 'none')
 call s:HL('rubyPseudoVariable', 'hcontrast', 'none', 'none')
 call s:HL('rubyBlockParameter', 'none', 'none', 'none')
 call s:HL('rubyInstanceVariable', 'none', 'none', 'none')
