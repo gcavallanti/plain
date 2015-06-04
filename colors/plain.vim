@@ -153,20 +153,20 @@ endif
 
 
 
-call s:HL('Folded', 'none', 'none', 'none')
+call s:HL('Folded', 'lcontrast', 'vlcontrast', 'bold')
 call s:HL('CursorLine', 'none', 'vlcontrast', 'none')
 call s:HL('CursorColumn', 'none', 'vlcontrast', 'none')
-call s:HL('ColorColumn', 'none', 'lcontrast', 'none')
+call s:HL('ColorColumn', 'none', 'vlcontrast', 'none')
 call s:HL('Visual', 'vhcontrast', 'lcontrast', 'none')
 call s:HL('VisualNOS', 'hcontrast', 'lcontrast', 'none')
 
 " GUI
-call s:HL('TabLine', 'hcontrast', 'lcontrast', 'none')
-call s:HL('TabLineFill', 'none', 'none', 'none')
-call s:HL('TabLineSel', 'vlcontrast', 'vhcontrast', 'none')
+call s:HL('TabLine', 'hcontrast', 'vlcontrast', 'none')
+call s:HL('TabLineFill', 'none', 'vlcontrast', 'none')
+call s:HL('TabLineSel', 'lcontrast', 'vhcontrast', 'none')
 
-call s:HL('NonText', 'lcontrast', 'none', 'none')
-call s:HL('SpecialKey', 'lcontrast', 'none', 'none')
+call s:HL('NonText', 'vlcontrast', 'none', 'none')
+call s:HL('SpecialKey', 'vlcontrast', 'none', 'none')
 
 call s:HL('Search', 'nblue', 'none', 'none')
 " call s:HL('Search', 'vhcontrast', 'lcontrast', 'none')
@@ -178,21 +178,21 @@ call s:HL('Directory', 'nblue', 'none', 'none')
 call s:HL('Title', 'ngreen')
 
 call s:HL('ErrorMsg', 'nred', 'none', 'none')
-call s:HL('MoreMsg', 'nyellow', 'none', 'none')
-call s:HL('ModeMsg', 'ngreen', 'none', 'none')
+call s:HL('WarningMsg', 'nyellow', 'none', 'none')
+call s:HL('MoreMsg', 'hcontrast', 'none', 'none')
+call s:HL('ModeMsg', 'hcontrast', 'none', 'none')
 call s:HL('Question', 'nblue', 'none', 'none')
-call s:HL('WarningMsg', 'nmagenta', 'none', 'none')
 call s:HL('Delimiter', 'none', 'none', 'none')
 
 call s:HL('Tag', 'none', 'none', 'underline')
 
 call s:HL('WildMenu', 'gray25', 'gray07', 'none')
 
-call s:HL('VertSplit', 'lcontrast', 'hcontrast', 'none')
+call s:HL('VertSplit', 'lcontrast', 'vlcontrast', 'none')
 call s:HL('StatusLine', 'lcontrast', 'vhcontrast', 'none')
 call s:HL('StatusLineNC', 'lcontrast', 'hcontrast', 'none')
 call s:HL('User1', 'lcontrast', 'vhcontrast', 'none')
-call s:HL('User2', 'vlcontrast', 'vhcontrast', 'none')
+call s:HL('User2', 'lcontrast', 'vhcontrast', 'none')
 call s:HL('User3', 'lcontrast', 'vhcontrast', 'none' )
 call s:HL('User4', 'gray04', 'gray21', 'none')
 call s:HL('User5', 'gray09', 'gray21', 'none')
@@ -206,7 +206,7 @@ call s:HL('User0', 'gray25', 'gray05', 'none')
 call s:HL('CursorLineNr', 'hcontrast', 'vlcontrast', 'none')
 call s:HL('LineNr', 'lcontrast', s:gutter, 'none')
 call s:HL('FoldColumn', 'lcontrast', 'vlcontrast', 'none')
-call s:HL('SignColumn', 'none', s:gutter, 'none')
+call s:HL('SignColumn', 'lcontrast', s:gutter, 'none')
 " }}}
 
 call s:HL('Pmenu', 'vlcontrast', 'hcontrast', 'none')
@@ -226,7 +226,7 @@ call s:HL('Special', 'vhcontrast', 'none', 'none')
 call s:HL('MatchParen', 'nblue', 'none', 'bold')
 
 call s:HL('Comment', 'lcontrast', 'none', 'none')
-call s:HL('Todo', 'ngreen', 'none', 'none')
+call s:HL('Todo', 'nyellow', 'none', 'none')
 call s:HL('SpecialComment', 'nred', 'none', 'bold')
 
 call s:HL('Statement', 'vhcontrast', 'none', 'bold')
@@ -390,12 +390,14 @@ call s:HL('cssImportant', 'none', 'none', 'none')
 " call s:HL('SpellBad', 'nred', 'nblue', 'underline')
 " }}}
 " Syntastic {{{
-call s:HL('SyntasticError', 'bred', 'none', 'none')
-call s:HL('SyntasticWarning', 'byellow', 'none', 'none')
+" Whole error/warning lines are colored.  Specific error/warning spots are
+" underlined and more brightly colored
+call s:HL('SyntasticError', 'bred', 'none', 'underline')
+call s:HL('SyntasticWarning', 'byellow', 'none', 'underline')
 call s:HL('SyntasticStyleError', 'bred', 'none', 'none')
 call s:HL('SyntasticStyleWarning', 'byellow', 'none', 'none')
-call s:HL('SyntasticErrorSign', 'bred', s:gutter, 'none')
-call s:HL('SyntasticWarningSign', 'byellow', s:gutter, 'none')
+call s:HL('SyntasticErrorSign', 'nred', s:gutter, 'none')
+call s:HL('SyntasticWarningSign', 'nyellow', s:gutter, 'none')
 call s:HL('SyntasticStyleErrorSign', 'bred', s:gutter, 'none')
 call s:HL('SyntasticStyleWarningSign', 'byellow', s:gutter, 'none')
 call s:HL('SyntasticErrorLine', 'nred', 'none', 'none')
@@ -444,6 +446,10 @@ call s:HL('gitcommitSelectedFile', 'ngreen', 'none',)
 call s:HL('gitcommitUntrackedFile', 'nyellow', 'none',)
 call s:HL('gitcommitBranch', 'none', 'none',)
 
+" }}}
+
+" indentline {{{
+call s:HL('Conceal', 'vlcontrast', 'none',)
 " }}}
 
 " XML {{{
