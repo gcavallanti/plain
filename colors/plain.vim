@@ -153,7 +153,7 @@ endif
 
 
 
-call s:HL('Folded', 'lcontrast', 'vlcontrast', 'bold')
+call s:HL('Folded', 'lcontrast', 'none', 'none')
 call s:HL('CursorLine', 'none', 'vlcontrast', 'none')
 call s:HL('CursorColumn', 'none', 'vlcontrast', 'none')
 call s:HL('ColorColumn', 'none', 'vlcontrast', 'none')
@@ -166,11 +166,11 @@ call s:HL('TabLineFill', 'none', 'vlcontrast', 'none')
 call s:HL('TabLineSel', 'lcontrast', 'vhcontrast', 'none')
 
 call s:HL('NonText', 'vlcontrast', 'none', 'none')
-call s:HL('SpecialKey', 'vlcontrast', 'none', 'none')
+call s:HL('SpecialKey', 'lcontrast', 'none', 'none')
 
-call s:HL('Search', 'nblue', 'none', 'none')
+call s:HL('Search', 'ncyan', 'none', 'none')
 " call s:HL('Search', 'vhcontrast', 'lcontrast', 'none')
-call s:HL('IncSearch', 'gray25', 'nblue', 'none')
+call s:HL('IncSearch', 'vhcontrast', 'bcyan', 'none')
 call s:HL('Underlined', 'none', 'none', 'underline')
 
 call s:HL('Directory', 'nblue', 'none', 'none')
@@ -188,10 +188,10 @@ call s:HL('Tag', 'none', 'none', 'underline')
 
 call s:HL('WildMenu', 'gray25', 'gray07', 'none')
 
-call s:HL('VertSplit', 'lcontrast', 'vlcontrast', 'none')
+call s:HL('VertSplit', 'lcontrast', 'none', 'none')
 call s:HL('StatusLine', 'lcontrast', 'vhcontrast', 'none')
-call s:HL('StatusLineNC', 'lcontrast', 'hcontrast', 'none')
-call s:HL('User1', 'lcontrast', 'vhcontrast', 'none')
+call s:HL('StatusLineNC', 'vhcontrast', 'lcontrast', 'none')
+call s:HL('User1', 'lcontrast', 'hcontrast', 'none')
 call s:HL('User2', 'lcontrast', 'vhcontrast', 'none')
 call s:HL('User3', 'lcontrast', 'vhcontrast', 'none' )
 call s:HL('User4', 'gray04', 'gray21', 'none')
@@ -226,7 +226,7 @@ call s:HL('Special', 'vhcontrast', 'none', 'none')
 call s:HL('MatchParen', 'nblue', 'none', 'bold')
 
 call s:HL('Comment', 'lcontrast', 'none', 'none')
-call s:HL('Todo', 'nyellow', 'none', 'none')
+call s:HL('Todo', 'nmagenta', 'none', 'none')
 call s:HL('SpecialComment', 'nred', 'none', 'bold')
 
 call s:HL('Statement', 'vhcontrast', 'none', 'bold')
@@ -236,7 +236,6 @@ call s:HL('Operator', 'vhcontrast', 'none', 'bold')
 call s:HL('Label', 'vhcontrast', 'none', 'bold')
 call s:HL('Repeat', 'vhcontrast', 'none', 'bold')
 
-call s:HL('Identifier', 'none', 'none', 'none')
 call s:HL('Identifier', 'none', 'none', 'none')
 call s:HL('Function', 'none', 'none', 'none')
 
@@ -252,7 +251,7 @@ call s:HL('Boolean', 'hcontrast', 'none', 'none')
 call s:HL('Number', 'hcontrast', 'none', 'none')
 call s:HL('Float', 'hcontrast', 'none', 'none')
 
-call s:HL('String', 'hcontrast', 'vlcontrast', 'none')
+call s:HL('String', 'hcontrast', 'none', 'none')
 
 call s:HL('SpecialChar', 'vhcontrast', 'none', 'none')
 
@@ -263,15 +262,17 @@ call s:HL('Structure', 'vhcontrast', 'none', 'bold')
 
 call s:HL('Exception', 'nred', 'none', 'bold')
 
-call s:HL('Error', 'nred', 'bred', 'none')
+call s:HL('Error', 'nred', 'none', 'underline')
 call s:HL('Debug', 'gray25', 'none', 'bold')
 call s:HL('Ignore', 'hcontrast', 'none', 'none')
 " }}}
 
 " Help {{{
 call s:HL('helpHyperTextEntry', 'vhcontrast', 'none', 'bold')
+call s:HL('helpHyperTextJump', 'nblue', 'none', 'underline')
+call s:HL('helpTag', 'nblue', 'none', 'underline')
 call s:HL('helpSectionDelim', 'vhcontrast', 'none', 'bold')
-call s:HL('helpSpecial', 'hcontrast', 'none', 'none')
+call s:HL('helpSpecial', 'hcontrast', 'vlcontrast', 'none')
 call s:HL('helpExample', 'hcontrast', 'none', 'none')
 call s:HL('helpHeader', 'vhcontrast', 'none', 'bold')
 call s:HL('helpNotVi', 'lcontrast', 'none', 'none')
@@ -287,9 +288,9 @@ call s:HL('UndotreeSavedBig', 'vhcontrast', 'none', 'bold')
 " }}}
 " Diffs {{{
 call s:HL('DiffDelete', 'vlcontrast', 'none', 'none')
-call s:HL('DiffAdd', 'nblue', 'bblue', 'none')
-call s:HL('DiffChange', 'nblue', 'bblue', 'none')
-call s:HL('DiffText', 'gray25', 'bblue', 'none')
+call s:HL('DiffAdd', 'gray25', 'hcontrast', 'none')
+call s:HL('DiffChange', 'none', 'vlcontrast', 'none')
+call s:HL('DiffText', 'gray25', 'hcontrast', 'none')
 " }}}
 
 " GitGutter {{{
@@ -323,6 +324,9 @@ endif
 " }}}
 
 " quickfix {{{
+call s:HL('CtrlPNVName', 'none', 'none', 'none')
+call s:HL('CtrlPNVDate', 'lcontrast', 'none', 'none')
+call s:HL('CtrlPNVContent', 'hcontrast', 'none', 'none')
 call s:HL('qfFilename', 'none', 'none', 'none')
 call s:HL('qfSeparator', 'none', 'none', 'none')
 call s:HL('qfLineNr', 'none', 'none', 'none')
@@ -347,13 +351,14 @@ call s:HL('CtrlPStats', 'lcontrast', 'vhcontrast', 'none')
 
 " TagBar {{{
 call s:HL('TagBarScope', 'vhcontrast', 'none', 'bold')
+call s:HL('TagBarSignature', 'lcontrast', 'none', 'bold')
 call s:HL('TagBarKind', 'vhcontrast', 'none', 'bold')
 call s:HL('TagBarNestedKind', 'hcontrast', 'none', 'none')
 call s:HL('TagBarType', 'hcontrast', 'none', 'none')
 call s:HL('TagBarFoldIcon', 'vhcontrast', 'none', 'none')
-call s:HL('TagBarVisibilityPublic', 'hcontrast', 'none', 'none')
-call s:HL('TagBarVisibilityProtected', 'hcontrast', 'none', 'none')
-call s:HL('TagBarVisibilityPrivate', 'hcontrast', 'none', 'none')
+call s:HL('TagBarVisibilityPublic', 'vlcontrast', 'none', 'none')
+call s:HL('TagBarVisibilityProtected', 'vlcontrast', 'none', 'none')
+call s:HL('TagBarVisibilityPrivate', 'vlcontrast', 'none', 'none')
 " }}}
 
 " }}}
@@ -392,18 +397,18 @@ call s:HL('cssImportant', 'none', 'none', 'none')
 " Syntastic {{{
 " Whole error/warning lines are colored.  Specific error/warning spots are
 " underlined and more brightly colored
-call s:HL('SyntasticError', 'bred', 'none', 'underline')
-call s:HL('SyntasticWarning', 'byellow', 'none', 'underline')
-call s:HL('SyntasticStyleError', 'bred', 'none', 'none')
-call s:HL('SyntasticStyleWarning', 'byellow', 'none', 'none')
+call s:HL('SyntasticError', 'nred', 'none', 'underline')
+call s:HL('SyntasticWarning', 'nyellow', 'none', 'underline')
+call s:HL('SyntasticStyleError', 'nred', 'none', 'underline')
+call s:HL('SyntasticStyleWarning', 'nyellow', 'none', 'underline')
 call s:HL('SyntasticErrorSign', 'nred', s:gutter, 'none')
 call s:HL('SyntasticWarningSign', 'nyellow', s:gutter, 'none')
-call s:HL('SyntasticStyleErrorSign', 'bred', s:gutter, 'none')
-call s:HL('SyntasticStyleWarningSign', 'byellow', s:gutter, 'none')
-call s:HL('SyntasticErrorLine', 'nred', 'none', 'none')
-call s:HL('SyntasticWarningLine', 'nyellow', 'none', 'none')
-call s:HL('SyntasticStyleErrorLine', 'nred', 'none', 'none')
-call s:HL('SyntasticStyleWarningLine', 'nyellow', 'none', 'none')
+call s:HL('SyntasticStyleErrorSign', 'nred', s:gutter, 'none')
+call s:HL('SyntasticStyleWarningSign', 'nyellow', s:gutter, 'none')
+call s:HL('SyntasticErrorLine', 'none', 'none', 'none')
+call s:HL('SyntasticWarningLine', 'none', 'none', 'none')
+call s:HL('SyntasticStyleErrorLine', 'none', 'none', 'none')
+call s:HL('SyntasticStyleWarningLine', 'none', 'none', 'none')
 " }}}
 
 " javascript {{{
@@ -477,7 +482,7 @@ call s:HL('htmlH5', 'none', 'none', 'none')
 call s:HL('htmlH6', 'none', 'none', 'none')
 call s:HL('htmlLink', 'none', 'none', 'none')
 call s:HL('htmlError', 'none', 'none', 'none')
-call s:HL('htmlString', 'hcontrast', 'vlcontrast', 'none')
+call s:HL('htmlString', 'hcontrast', 'none', 'none')
 call s:HL('javaScript', 'none', 'none', 'none')
 call s:HL('javaScriptMember', 'none', 'none', 'none')
 " }}} 
@@ -486,10 +491,10 @@ call s:HL('javaScriptMember', 'none', 'none', 'none')
 call s:HL('javaClassDecl', 'vhcontrast', 'none', 'bold')
 call s:HL('javaScopeDecl', 'vhcontrast', 'none', 'bold')
 call s:HL('javaCommentTitle', 'lcontrast', 'none', 'none')
-call s:HL('javaDocTags', 'hcontrast', 'none', 'none')
-call s:HL('javaDocParam', 'none', 'none', 'none')
+call s:HL('javaDocTags', 'hcontrast', 'vlcontrast', 'none')
+call s:HL('javaDocParam', 'hcontrast', 'none', 'none')
 call s:HL('javaStorageClass', 'vhcontrast', 'none', 'bold')
-call s:HL('javaAnnotation', 'hcontrast', 'none', 'none')
+call s:HL('javaAnnotation', 'hcontrast', 'vlcontrast', 'none')
 call s:HL('javaTypedef', 'hcontrast', 'none', 'none')
 call s:HL('javaType', 'vhcontrast', 'none', 'bold')
 call s:HL('javaBraces', 'none', 'none', 'none')
@@ -571,7 +576,7 @@ call s:HL('markdownHeadingDelimiter', 'vhcontrast', 'none', 'bold')
 call s:HL('markdownOrderedListMarker', 'hcontrast', 'none', 'none')
 call s:HL('markdownListMarker', 'hcontrast', 'none', 'none')
 call s:HL('markdownBlockQuote', 'hcontrast', 'none', 'none')
-call s:HL('markdownItalic', 'vhcontrast', 'none', 'underline')
+call s:HL('markdownItalic', 'hcontrast', 'none', 'none')
 call s:HL('markdownBold', 'vhcontrast', 'none', 'bold')
 call s:HL('markdownH1', 'vhcontrast', 'none', 'bold')
 call s:HL('markdownH2', 'vhcontrast', 'none', 'bold')
@@ -581,15 +586,15 @@ call s:HL('markdownH5', 'vhcontrast', 'none', 'bold')
 call s:HL('markdownH6', 'vhcontrast', 'none', 'bold')
 call s:HL('markdownLinkText', 'vhcontrast', 'none', 'none')
 call s:HL('markdownLinkTextDelimiter', 'vhcontrast', 'none', 'none')
-call s:HL('markdownError', 'nred', 'none', 'none')
+call s:HL('markdownError', 'nred', 'none', 'underline')
 call s:HL('markdownIdDeclaration', 'hcontrast')
 call s:HL('markdownAutomaticLink', 'nblue', 'none', 'none')
 call s:HL('markdownUrl', 'hcontrast', 'none', 'underline')
 call s:HL('markdownLinkDelimiter', 'hcontrast', 'none', 'none')
 call s:HL('markdownUrldelimiter', 'hcontrast', 'none', 'none')
-call s:HL('markdownCodeDelimiter', 'hcontrast', 'vlcontrast', 'none')
-call s:HL('markdownCode', 'hcontrast', 'vlcontrast', 'none')
-call s:HL('markdownCodeBlock', 'hcontrast', 'vlcontrast', 'none')
+call s:HL('markdownCodeDelimiter', 'hcontrast', 'none', 'none')
+call s:HL('markdownCode', 'hcontrast', 'none', 'none')
+call s:HL('markdownCodeBlock', 'hcontrast', 'none', 'none')
 " }}}
 
 " Python {{{
