@@ -47,29 +47,26 @@ let s:bwc.gray02  = ['#121212', 233]
 let s:bwc.gray01  = ['#080808', 232]
 let s:bwc.gray00  = ['#000000', 16]
 
-"95>5f 135>87 175>af 215>d7 255>ff
-let s:bwc.nred     = ['#ff5f87', 1]  "1
-let s:bwc.bred     = ['#87005f', 9]  "9
-let s:bwc.ngreen   = ['#87d700', 2]  "2
+let s:bwc.nred     = ['#ff5faf', 1]  "1
+let s:bwc.bred     = ['#af0000', 9]  "9
+let s:bwc.ngreen   = ['#87d75f', 2]  "2
 let s:bwc.bgreen   = ['#008700', 10] "10
-let s:bwc.nyellow  = ['#ffaf57', 3]  "3
-let s:bwc.byellow  = ['#d78700', 11] "11
-let s:bwc.nblue    = ['#5f5fff', 4]  "4
-let s:bwc.bblue    = ['#000087', 12] "12
-let s:bwc.nmagenta = ['#af5fd7', 5]  "5
-let s:bwc.bmagenta = ['#5f00d7', 13] "13
-let s:bwc.ncyan    = ['#5fafff', 6]  "6
-let s:bwc.bcyan    = ['#0087d7', 14] "14
+let s:bwc.nyellow  = ['#ffaf5f', 3]  "3
+let s:bwc.byellow  = ['#af5f00', 11] "11
+let s:bwc.nblue    = ['#5f87ff', 4]  "4
+let s:bwc.bblue    = ['#0000af', 12] "12
+let s:bwc.nmagenta = ['#af87d7', 5]  "5
+let s:bwc.bmagenta = ['#870087', 13] "13
+let s:bwc.ncyan    = ['#5fd7ff', 6]  "6
+let s:bwc.bcyan    = ['#0087af', 14] "14
 
-let s:bwc.background       = ['#282828', 232]
-" let s:bwc.yellow    = ['#0087d7', 222] "14
-" let s:bwc.red    = ['#0087d7', 203] "14
+let s:bwc.background       = ['#282828', 235]
 if &background == 'dark'
 
-    let s:bwc.lcontrast  = ['#686868', 0]
-    let s:bwc.vlcontrast  = ['#383838', 8]
-    let s:bwc.hcontrast  = ['#808080', 15]
-    let s:bwc.vhcontrast  = ['#d0d0d0', 7]
+    let s:bwc.lcontrast  = ['#565656', 0]
+    let s:bwc.vlcontrast  = ['#3b3b3b', 8]
+    let s:bwc.hcontrast  = ['#7d7d7d', 15]
+    let s:bwc.vhcontrast  = ['#d3d3d3', 7]
 
     " let s:bwc.lcontrast = s:bwc.gray07
 else
@@ -126,7 +123,7 @@ function! s:HL(group, fg, ...)
 endfunction
 " }}}
 
-let has_gutter = 1
+let has_gutter = 0
 if exists('g:has_gutter') && g:has_gutter
   let s:gutter = 'vlcontrast'
 else
@@ -188,7 +185,7 @@ call s:HL('Tag', 'none', 'none', 'underline')
 
 call s:HL('WildMenu', 'gray25', 'gray07', 'none')
 
-call s:HL('VertSplit', 'lcontrast', 'none', 'none')
+call s:HL('VertSplit', 'vlcontrast', 'none', 'none')
 call s:HL('StatusLine', 'lcontrast', 'vhcontrast', 'none')
 call s:HL('StatusLineNC', 'vhcontrast', 'lcontrast', 'none')
 call s:HL('User1', 'lcontrast', 'hcontrast', 'none')
@@ -203,14 +200,14 @@ call s:HL('User9', 'gray04', 'gray21', 'none')
 call s:HL('User0', 'gray25', 'gray05', 'none')
 
 " Gutter {{{
-call s:HL('CursorLineNr', 'hcontrast', 'vlcontrast', 'none')
-call s:HL('LineNr', 'lcontrast', s:gutter, 'none')
-call s:HL('FoldColumn', 'lcontrast', 'vlcontrast', 'none')
+call s:HL('CursorLineNr', 'ngreen', s:gutter, 'none')
+call s:HL('LineNr', 'vlcontrast', s:gutter, 'none')
+call s:HL('FoldColumn', 'lcontrast', s:gutter, 'none')
 call s:HL('SignColumn', 'lcontrast', s:gutter, 'none')
 " }}}
 
 call s:HL('Pmenu', 'vlcontrast', 'hcontrast', 'none')
-call s:HL('PmenuSel', 'gray25', 'nred', 'none')
+call s:HL('PmenuSel', 'gray25', 'bmagenta', 'none')
 call s:HL('PmenuSbar', 'none', 'vhcontrast', 'none')
 call s:HL('PmenuThumb', 'none', 'lcontrast', 'none')
  
@@ -589,6 +586,7 @@ call s:HL('markdownLinkTextDelimiter', 'vhcontrast', 'none', 'none')
 call s:HL('markdownError', 'nred', 'none', 'underline')
 call s:HL('markdownIdDeclaration', 'hcontrast')
 call s:HL('markdownAutomaticLink', 'nblue', 'none', 'none')
+call s:HL('markdownFootnote', 'hcontrast', 'none', 'none')
 call s:HL('markdownUrl', 'hcontrast', 'none', 'underline')
 call s:HL('markdownLinkDelimiter', 'hcontrast', 'none', 'none')
 call s:HL('markdownUrldelimiter', 'hcontrast', 'none', 'none')
