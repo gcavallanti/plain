@@ -47,26 +47,27 @@ let s:bwc.gray02  = ['#121212', 233]
 let s:bwc.gray01  = ['#080808', 232]
 let s:bwc.gray00  = ['#000000', 16]
 
-let s:bwc.nred     = ['#ff5faf', 1]  "1
+let s:bwc.nred     = ['#ff5f87', 1]  "1
 let s:bwc.bred     = ['#af0000', 9]  "9
-let s:bwc.ngreen   = ['#87d75f', 2]  "2
+let s:bwc.ngreen   = ['#87ff5f', 2]  "2
 let s:bwc.bgreen   = ['#008700', 10] "10
-let s:bwc.nyellow  = ['#ffaf5f', 3]  "3
+let s:bwc.nyellow  = ['#ffd75f', 3]  "3
 let s:bwc.byellow  = ['#af5f00', 11] "11
 let s:bwc.nblue    = ['#5f87ff', 4]  "4
 let s:bwc.bblue    = ['#0000af', 12] "12
-let s:bwc.nmagenta = ['#af87d7', 5]  "5
+let s:bwc.nmagenta = ['#af5fff', 5]  "5
 let s:bwc.bmagenta = ['#870087', 13] "13
 let s:bwc.ncyan    = ['#5fd7ff', 6]  "6
 let s:bwc.bcyan    = ['#0087af', 14] "14
 
-let s:bwc.background       = ['#282828', 235]
+let s:bwc.background       = ['#232323', 235]
+let s:bwc.cursor       = ['#8700ff', 5]
 if &background == 'dark'
 
-    let s:bwc.lcontrast  = ['#565656', 0]
-    let s:bwc.vlcontrast  = ['#3b3b3b', 8]
+    let s:bwc.lcontrast  = ['#494949', 0]
+    let s:bwc.vlcontrast  = ['#3d3d3d', 8]
     let s:bwc.hcontrast  = ['#7d7d7d', 15]
-    let s:bwc.vhcontrast  = ['#d3d3d3', 7]
+    let s:bwc.vhcontrast  = ['#d4d4d4', 7]
 
     " let s:bwc.lcontrast = s:bwc.gray07
 else
@@ -154,7 +155,7 @@ call s:HL('Folded', 'lcontrast', 'none', 'none')
 call s:HL('CursorLine', 'none', 'vlcontrast', 'none')
 call s:HL('CursorColumn', 'none', 'vlcontrast', 'none')
 call s:HL('ColorColumn', 'none', 'vlcontrast', 'none')
-call s:HL('Visual', 'vhcontrast', 'lcontrast', 'none')
+call s:HL('Visual', 'hcontrast', 'lcontrast', 'none')
 call s:HL('VisualNOS', 'hcontrast', 'lcontrast', 'none')
 
 " GUI
@@ -178,7 +179,7 @@ call s:HL('ErrorMsg', 'nred', 'none', 'none')
 call s:HL('WarningMsg', 'nyellow', 'none', 'none')
 call s:HL('MoreMsg', 'hcontrast', 'none', 'none')
 call s:HL('ModeMsg', 'hcontrast', 'none', 'none')
-call s:HL('Question', 'nblue', 'none', 'none')
+call s:HL('Question', 'hcontrast', 'none', 'none')
 call s:HL('Delimiter', 'none', 'none', 'none')
 
 call s:HL('Tag', 'none', 'none', 'underline')
@@ -186,10 +187,10 @@ call s:HL('Tag', 'none', 'none', 'underline')
 call s:HL('WildMenu', 'gray25', 'gray07', 'none')
 
 call s:HL('VertSplit', 'vlcontrast', 'none', 'none')
-call s:HL('StatusLine', 'lcontrast', 'vhcontrast', 'none')
+call s:HL('StatusLine', 'vlcontrast', 'vhcontrast', 'none')
 call s:HL('StatusLineNC', 'vhcontrast', 'lcontrast', 'none')
-call s:HL('User1', 'lcontrast', 'hcontrast', 'none')
-call s:HL('User2', 'lcontrast', 'vhcontrast', 'none')
+call s:HL('User1', 'vlcontrast', 'vhcontrast', 'bold')
+call s:HL('User2', 'gray25', 'lcontrast', 'none')
 call s:HL('User3', 'lcontrast', 'vhcontrast', 'none' )
 call s:HL('User4', 'gray04', 'gray21', 'none')
 call s:HL('User5', 'gray09', 'gray21', 'none')
@@ -207,12 +208,12 @@ call s:HL('SignColumn', 'lcontrast', s:gutter, 'none')
 " }}}
 
 call s:HL('Pmenu', 'vlcontrast', 'hcontrast', 'none')
-call s:HL('PmenuSel', 'gray25', 'bmagenta', 'none')
+call s:HL('PmenuSel', 'gray25', 'nblue', 'none')
 call s:HL('PmenuSbar', 'none', 'vhcontrast', 'none')
 call s:HL('PmenuThumb', 'none', 'lcontrast', 'none')
  
 " Cursor {{{
-call s:HL('Cursor', 'gray00', 'ngreen', 'none')
+call s:HL('Cursor', 'gray25', 'cursor', 'none')
 call s:HL('vCursor', 'gray00', 'ngreen', 'none')
 call s:HL('iCursor', 'gray00', 'ngreen', 'none')
 " }}}
@@ -272,6 +273,7 @@ call s:HL('helpSectionDelim', 'vhcontrast', 'none', 'bold')
 call s:HL('helpSpecial', 'hcontrast', 'vlcontrast', 'none')
 call s:HL('helpExample', 'hcontrast', 'none', 'none')
 call s:HL('helpHeader', 'vhcontrast', 'none', 'bold')
+call s:HL('helpCommand', 'vhcontrast', 'none', 'underline')
 call s:HL('helpNotVi', 'lcontrast', 'none', 'none')
 call s:HL('helpNote', 'lcontrast', 'none', 'none')
 " }}}
@@ -285,9 +287,9 @@ call s:HL('UndotreeSavedBig', 'vhcontrast', 'none', 'bold')
 " }}}
 " Diffs {{{
 call s:HL('DiffDelete', 'vlcontrast', 'none', 'none')
-call s:HL('DiffAdd', 'gray25', 'hcontrast', 'none')
-call s:HL('DiffChange', 'none', 'vlcontrast', 'none')
-call s:HL('DiffText', 'gray25', 'hcontrast', 'none')
+call s:HL('DiffAdd', 'gray25', 'nblue', 'none')
+call s:HL('DiffChange', 'nblue', 'bblue', 'none')
+call s:HL('DiffText', 'gray25', 'nblue', 'none')
 " }}}
 
 " GitGutter {{{
@@ -324,9 +326,9 @@ endif
 call s:HL('CtrlPNVName', 'none', 'none', 'none')
 call s:HL('CtrlPNVDate', 'lcontrast', 'none', 'none')
 call s:HL('CtrlPNVContent', 'hcontrast', 'none', 'none')
-call s:HL('qfFilename', 'none', 'none', 'none')
+call s:HL('qfFilename', 'hcontrast', 'none', 'none')
 call s:HL('qfSeparator', 'none', 'none', 'none')
-call s:HL('qfLineNr', 'none', 'none', 'none')
+call s:HL('qfLineNr', 'hcontrast', 'none', 'none')
 call s:HL('qfError', 'none', 'none', 'none')
 " }}}
 
@@ -394,10 +396,10 @@ call s:HL('cssImportant', 'none', 'none', 'none')
 " Syntastic {{{
 " Whole error/warning lines are colored.  Specific error/warning spots are
 " underlined and more brightly colored
-call s:HL('SyntasticError', 'nred', 'none', 'underline')
-call s:HL('SyntasticWarning', 'nyellow', 'none', 'underline')
-call s:HL('SyntasticStyleError', 'nred', 'none', 'underline')
-call s:HL('SyntasticStyleWarning', 'nyellow', 'none', 'underline')
+call s:HL('SyntasticError', 'none', 'none', 'underline')
+call s:HL('SyntasticWarning', 'none', 'none', 'underline')
+call s:HL('SyntasticStyleError', 'none', 'none', 'underline')
+call s:HL('SyntasticStyleWarning', 'none', 'none', 'underline')
 call s:HL('SyntasticErrorSign', 'nred', s:gutter, 'none')
 call s:HL('SyntasticWarningSign', 'nyellow', s:gutter, 'none')
 call s:HL('SyntasticStyleErrorSign', 'nred', s:gutter, 'none')
@@ -426,12 +428,12 @@ call s:HL('javaScriptMember', 'hcontrast', 'none', 'none')
 
 " Diff {{{
 call s:HL('diffAdded', 'ngreen', 'none', 'none')
+call s:HL('diffRemoved', 'nred', 'none',)
 call s:HL('diffChanged', 'nyellow', 'none', 'none')
 call s:HL('diffFile', 'nmagenta', 'none', 'none')
 call s:HL('diffLine', 'ncyan', 'none', 'none')
 call s:HL('diffNewFile', 'nmagenta', 'none', 'none')
 call s:HL('diffOldFile', 'none', 'none', 'none')
-call s:HL('diffRemoved', 'nred', 'none',)
 call s:HL('diffSubname', 'none', 'none', 'none')
 " }}}
 
@@ -593,6 +595,17 @@ call s:HL('markdownUrldelimiter', 'hcontrast', 'none', 'none')
 call s:HL('markdownCodeDelimiter', 'hcontrast', 'none', 'none')
 call s:HL('markdownCode', 'hcontrast', 'none', 'none')
 call s:HL('markdownCodeBlock', 'hcontrast', 'none', 'none')
+" }}}
+
+" Python {{{
+" call s:HL('rainbowParensShell16', 'nred', 'none', 'none')
+" call s:HL('rainbowParensShell15', 'none', 'none', 'none')
+" call s:HL('rainbowParensShell14', 'ngreen', 'none', 'none')
+" call s:HL('rainbowParensShell13', 'nyellow', 'none', 'none')
+" call s:HL('rainbowParensShell12', 'nred', 'none', 'none')
+" call s:HL('rainbowParensShell11', 'nmagenta', 'none', 'none')
+" call s:HL('rainbowParensShell10', 'nblue', 'none', 'none')
+" call s:HL('rainbowParensShell9', 'ncyan', 'none', 'none')
 " }}}
 
 " Python {{{
